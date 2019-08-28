@@ -55,12 +55,21 @@ public static class CharacterExtension
 
         //glide zerando air speed quando direction=0
         //por algum motivo isso funciona...
+        //sem or oq está acontecendo
         character.Attributes.AirSpeedSmoothing = velocity.x;
         velocity.x = Mathf.SmoothDamp(
             velocity.x,
             character.Attributes.AirSpeed * direction.x,
             ref character.Attributes.AirSpeedSmoothing,
             character.Attributes.AirAccelerationTime);
+
+        //float targetVelX = character.Attributes.AirSpeed * direction.x;
+        //velocity.x = Mathf.SmoothDamp(
+        //    velocity.x,
+        //    targetVelX,
+        //    ref character.Attributes.AirSpeedSmoothing,
+        //    character.Attributes.AirAccelerationTime);
+
         character.Controller.Velocity = velocity;
 
         if (!character.Attributes.FacingDirection.x.Equals(Mathf.Sign(direction.x)))
@@ -158,30 +167,18 @@ public static class CharacterExtension
 
     public static void Jump(this Character character, Vector2 direction)
     {
-        //Debug.Log("direction: " + direction);
-
-        //animation transitions should be handled by the state machine, not the verbs
-        character.Anim.SetTrigger("Jump");
-
         Vector2 jumpSpeed = character.Controller.Velocity;
-        //Vector2 jumpSpeed = Vector2.zero;
-
-        Debug.Log("JumpSpeed pre X = " + jumpSpeed);
         jumpSpeed.x += direction.x * character.Attributes.JumpVelocity;
-        Debug.Log("JumpSpeed post X = " + jumpSpeed);
-
         jumpSpeed.y = direction.y * character.Attributes.JumpVelocity;
 
         character.Controller.Velocity = jumpSpeed;
-        //Debug.Log("jump vector: " + jumpVector);
-        //Debug.Log("velocity: " + character.Controller.Velocity);
-
         character.Attributes.JumpsCount++;
-
-        //character.StateMachine.SwitchToState(typeof(SRise));
 
         //state transitions should be handled by the state machine, no the verbs
         character.StateMachine.SwitchToState(typeof(SFall));
+        //animation transitions should be handled by the state machine, not the verbs
+        character.Anim.SetTrigger("Jump");
+
     }
 
     public static void WallGrab(this Character character, float wallSide)

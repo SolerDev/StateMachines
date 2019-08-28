@@ -1,18 +1,19 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SWallGrab : SAir
 {
     private float wallSide;
-    private Vector2 wallJumpDirection;
+    private Vector2 wallJumpDirection = Vector2.zero;
     private float timeInState = 0f;
 
     private readonly int climbingHash = Animator.StringToHash("Climbing");
 
+    //muito similar ao SWallSlide. Talvez devesse criar uma classe antes de ambos chama SWall
     public SWallGrab(Character character) : base(character)
     {
+        wallJumpDirection.x = character.Attributes.wallJumpProportions.x;
+        wallJumpDirection.y = character.Attributes.wallJumpProportions.y;
     }
 
     public override void OnEnter()
@@ -20,19 +21,14 @@ public class SWallGrab : SAir
         base.OnEnter();
         timeInState = 0f;
 
-        //wallSide = character.Controller.Collisions.left ? -1 : 1;
-
         wallSide = Physics2D.Raycast(
             character.Controller.CollBounds.middle,
             Vector2.left,
             character.Width() / 2 + character.Controller.SkinWidth,
             StaticRefs.MASK_GROUND) ?
             -1 : 1;
-        //Debug.Log("Wall side: " + wallSide);
 
-        //hardcoded
-        wallJumpDirection = new Vector2(-wallSide * .3f, .7f);
-
+        wallJumpDirection.x *= -wallSide;
 
         anim.SetBool(climbingHash, true);
     }
@@ -53,13 +49,14 @@ public class SWallGrab : SAir
         }
 
 
-        if (character.InputReader.Jump && character.CanJump())
+        if (character.InputReader.Jump && !character.Controller.Collisions.above)
         {
-            character.Jump(wallJumpDirection);
-            //Debug.Log("Wall Jump Direction: " + wallJumpDirection);
             character.Attributes.JumpsCount--;
+            character.Jump(wallJumpDirection);
         }
-        else if(character.InputReader.DirY<0f /*|| (character.InputReader.DirX + wallSide).Equals(0f)*/)
+        else if (
+            character.InputReader.DirY < 0f ||
+            character.InputReader.DirX * wallSide < 0f)
         {
             ft = typeof(SFall);
         }

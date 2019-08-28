@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SFall : SAir
@@ -18,7 +16,7 @@ public class SFall : SAir
         }
 
         Vector2 direction = character.InputReader.Direction;
-        
+
         if (character.InputReader.Jump && character.CanJump())
         {
             character.Jump(Vector2.up);

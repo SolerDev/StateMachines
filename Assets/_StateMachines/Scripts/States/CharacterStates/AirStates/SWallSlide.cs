@@ -1,24 +1,23 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SWallSlide : SAir
 {
     private float wallSide;
-    private Vector2 wallJumpDirection;
+    private Vector2 wallJumpDirection = Vector2.zero;
 
     private readonly int slidingHash = Animator.StringToHash("Sliding");
 
+    //muito similar ao SWallGrab. Talvez devesse criar uma classe antes de ambos chama SWall
     public SWallSlide(Character character) : base(character)
     {
+        wallJumpDirection.x = character.Attributes.wallJumpProportions.x;
+        wallJumpDirection.y = character.Attributes.wallJumpProportions.y;
     }
 
     public override void OnEnter()
     {
         base.OnEnter();
-
-        //wallSide = character.Controller.Collisions.left ? -1 : 1;
 
         wallSide = Physics2D.Raycast(
             character.Controller.CollBounds.middle,
@@ -27,12 +26,7 @@ public class SWallSlide : SAir
             StaticRefs.MASK_GROUND) ?
             -1 : 1;
 
-
-
-        //proportions must add to One
-        //hardcoded
-        wallJumpDirection = new Vector2(-wallSide * .3f, .7f);
-        //Debug.Log(wallJumpDirection);
+        wallJumpDirection.x *= -wallSide;
 
         anim.SetBool(slidingHash, true);
     }
@@ -52,13 +46,15 @@ public class SWallSlide : SAir
             return ft;
         }
 
-        if (character.InputReader.Jump && character.CanJump())
+        if (character.InputReader.Jump && !character.Controller.Collisions.above)
         {
-            character.Jump(wallJumpDirection);
-            //Debug.Log("Wall Jump Direction: " + wallJumpDirection);
             character.Attributes.JumpsCount--;
+            character.Jump(wallJumpDirection);
         }
-        else if (character.InputReader.DirY < 0f || !character.IsWalledFromSide(wallSide) || (character.InputReader.DirX + wallSide).Equals(0f))
+        else if (
+            character.InputReader.DirY < 0f ||
+            character.InputReader.DirX * wallSide < 0f ||
+            !character.IsWalledFromSide(wallSide))
         {
             ft = typeof(SFall);
         }

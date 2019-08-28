@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Attributes
 {
     protected BaseStats baseStats;
     protected StateMachine stateMachine;
-    
+
     public bool Alive;
     public bool Hurt;
     public bool Attacking;
@@ -25,29 +23,28 @@ public class Attributes
     public Vector2 WaterSpeedSmoothingVector;
 
     public float GroundSpeed;
-    public float GroundAccelerationTime;
-
     public float AirSpeed;
-    public float AirAccelerationTime;
-    
     public float WaterSpeed;
-    public float WaterAccelerationTime;
-    
     public float WallSlideSpeed;
-    public float WallSlideAccelerationTime;
 
-    public float WallGrabTimeLimit;
+    public float GroundAccelerationTime;
+    public float AirAccelerationTime;
+    public float WaterAccelerationTime;
+    public float WallSlideAccelerationTime;
 
     public float JumpHeight;
     public float TimeToJumpApex;
     public float Gravity;
     public float JumpVelocity;
+
     public int JumpAmmount;
     public int JumpsCount;
 
     public float MaxClimbAngle;
     public float MaxDescendAngle;
 
+    public float WallGrabTimeLimit;
+    public Vector2 wallJumpProportions;
 
     public Attributes(BaseStats baseStats, StateMachine stateMachine)
     {
@@ -70,41 +67,44 @@ public class Attributes
         FacingDirection = Vector2.one;
 
         GroundSpeed = baseStats.GroundSpeed;
-        GroundAccelerationTime = baseStats.GroundAccelerationTime;
-        WaterSpeed = baseStats.WaterSpeed;
-        WaterAccelerationTime = baseStats.WaterAccelerationTime;
         AirSpeed = baseStats.AirSpeed;
-        AirAccelerationTime = baseStats.AirAccelerationTime;
-
+        WaterSpeed = baseStats.WaterSpeed;
         WallSlideSpeed = baseStats.WallSlideSpeed;
+
+        GroundAccelerationTime = baseStats.GroundAccelerationTime;
+        AirAccelerationTime = baseStats.AirAccelerationTime;
+        WaterAccelerationTime = baseStats.WaterAccelerationTime;
         WallSlideAccelerationTime = baseStats.WallSlideAccelerationTime;
-        WallGrabTimeLimit = baseStats.WallGrabTimeLimit;
 
         JumpHeight = baseStats.JumpHeight;
         TimeToJumpApex = baseStats.TimeToJumpApex;
         Gravity = -(2 * JumpHeight) / Mathf.Pow(TimeToJumpApex, 2);
         JumpVelocity = Math.Abs(Gravity) * TimeToJumpApex;
 
+        JumpAmmount = baseStats.JumpAmmount;
+        JumpsCount = 0;
+
         MaxClimbAngle = baseStats.MaxClimbAngle;
         MaxDescendAngle = baseStats.MaxDescendAngle;
 
-        JumpAmmount = baseStats.JumpAmmount;
-        JumpsCount = 0;
+        WallGrabTimeLimit = baseStats.WallGrabTimeLimit;
+        wallJumpProportions = baseStats.WalljumpProportions;
     }
 
+    //passar para a character extensions
     public void TakeDamage(int ammount)
     {
         HealthCurrent -= ammount;
 
         //Debug.Log(this + " took " + ammount + " damage.");
 
-        if (HealthCurrent<=0)
+        if (HealthCurrent <= 0)
         {
             HealthCurrent = 0;
             Die();
             return;
         }
-        
+
         //Debug.Log(this + " remaining health is " + HealthCurrent + ".");
         stateMachine.SwitchToState(typeof(SHurt));
     }
