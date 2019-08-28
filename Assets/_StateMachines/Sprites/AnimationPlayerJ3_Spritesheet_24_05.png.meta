@@ -1,0 +1,3361 @@
+fileFormatVersion: 2
+guid: 8f56fb5bc2c21aa4c910a54b3623a8ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: AnimationPlayerJ3_Spritesheet_24_05_0
+  - first:
+      213: 21300002
+    second: AnimationPlayerJ3_Spritesheet_24_05_1
+  - first:
+      213: 21300004
+    second: AnimationPlayerJ3_Spritesheet_24_05_2
+  - first:
+      213: 21300006
+    second: AnimationPlayerJ3_Spritesheet_24_05_3
+  - first:
+      213: 21300008
+    second: AnimationPlayerJ3_Spritesheet_24_05_4
+  - first:
+      213: 21300010
+    second: AnimationPlayerJ3_Spritesheet_24_05_5
+  - first:
+      213: 21300012
+    second: AnimationPlayerJ3_Spritesheet_24_05_6
+  - first:
+      213: 21300014
+    second: AnimationPlayerJ3_Spritesheet_24_05_7
+  - first:
+      213: 21300016
+    second: AnimationPlayerJ3_Spritesheet_24_05_8
+  - first:
+      213: 21300018
+    second: AnimationPlayerJ3_Spritesheet_24_05_9
+  - first:
+      213: 21300020
+    second: AnimationPlayerJ3_Spritesheet_24_05_10
+  - first:
+      213: 21300022
+    second: AnimationPlayerJ3_Spritesheet_24_05_11
+  - first:
+      213: 21300024
+    second: AnimationPlayerJ3_Spritesheet_24_05_12
+  - first:
+      213: 21300026
+    second: AnimationPlayerJ3_Spritesheet_24_05_13
+  - first:
+      213: 21300028
+    second: AnimationPlayerJ3_Spritesheet_24_05_14
+  - first:
+      213: 21300030
+    second: AnimationPlayerJ3_Spritesheet_24_05_15
+  - first:
+      213: 21300032
+    second: AnimationPlayerJ3_Spritesheet_24_05_16
+  - first:
+      213: 21300034
+    second: AnimationPlayerJ3_Spritesheet_24_05_17
+  - first:
+      213: 21300036
+    second: AnimationPlayerJ3_Spritesheet_24_05_18
+  - first:
+      213: 21300038
+    second: AnimationPlayerJ3_Spritesheet_24_05_19
+  - first:
+      213: 21300040
+    second: AnimationPlayerJ3_Spritesheet_24_05_20
+  - first:
+      213: 21300042
+    second: AnimationPlayerJ3_Spritesheet_24_05_21
+  - first:
+      213: 21300044
+    second: AnimationPlayerJ3_Spritesheet_24_05_22
+  - first:
+      213: 21300046
+    second: AnimationPlayerJ3_Spritesheet_24_05_23
+  - first:
+      213: 21300048
+    second: AnimationPlayerJ3_Spritesheet_24_05_24
+  - first:
+      213: 21300050
+    second: AnimationPlayerJ3_Spritesheet_24_05_25
+  - first:
+      213: 21300052
+    second: AnimationPlayerJ3_Spritesheet_24_05_26
+  - first:
+      213: 21300054
+    second: AnimationPlayerJ3_Spritesheet_24_05_27
+  - first:
+      213: 21300056
+    second: AnimationPlayerJ3_Spritesheet_24_05_28
+  - first:
+      213: 21300058
+    second: AnimationPlayerJ3_Spritesheet_24_05_29
+  - first:
+      213: 21300060
+    second: AnimationPlayerJ3_Spritesheet_24_05_30
+  - first:
+      213: 21300062
+    second: AnimationPlayerJ3_Spritesheet_24_05_31
+  - first:
+      213: 21300064
+    second: AnimationPlayerJ3_Spritesheet_24_05_32
+  - first:
+      213: 21300066
+    second: AnimationPlayerJ3_Spritesheet_24_05_33
+  - first:
+      213: 21300068
+    second: AnimationPlayerJ3_Spritesheet_24_05_34
+  - first:
+      213: 21300070
+    second: AnimationPlayerJ3_Spritesheet_24_05_35
+  - first:
+      213: 21300072
+    second: AnimationPlayerJ3_Spritesheet_24_05_36
+  - first:
+      213: 21300074
+    second: AnimationPlayerJ3_Spritesheet_24_05_37
+  - first:
+      213: 21300076
+    second: AnimationPlayerJ3_Spritesheet_24_05_38
+  - first:
+      213: 21300078
+    second: AnimationPlayerJ3_Spritesheet_24_05_39
+  - first:
+      213: 21300080
+    second: AnimationPlayerJ3_Spritesheet_24_05_40
+  - first:
+      213: 21300082
+    second: AnimationPlayerJ3_Spritesheet_24_05_41
+  - first:
+      213: 21300084
+    second: AnimationPlayerJ3_Spritesheet_24_05_42
+  - first:
+      213: 21300086
+    second: AnimationPlayerJ3_Spritesheet_24_05_43
+  - first:
+      213: 21300088
+    second: AnimationPlayerJ3_Spritesheet_24_05_44
+  - first:
+      213: 21300090
+    second: AnimationPlayerJ3_Spritesheet_24_05_45
+  - first:
+      213: 21300092
+    second: AnimationPlayerJ3_Spritesheet_24_05_46
+  - first:
+      213: 21300094
+    second: AnimationPlayerJ3_Spritesheet_24_05_47
+  - first:
+      213: 21300096
+    second: AnimationPlayerJ3_Spritesheet_24_05_48
+  - first:
+      213: 21300098
+    second: AnimationPlayerJ3_Spritesheet_24_05_49
+  - first:
+      213: 21300100
+    second: AnimationPlayerJ3_Spritesheet_24_05_50
+  - first:
+      213: 21300102
+    second: AnimationPlayerJ3_Spritesheet_24_05_51
+  - first:
+      213: 21300104
+    second: AnimationPlayerJ3_Spritesheet_24_05_52
+  - first:
+      213: 21300106
+    second: AnimationPlayerJ3_Spritesheet_24_05_53
+  - first:
+      213: 21300108
+    second: AnimationPlayerJ3_Spritesheet_24_05_54
+  - first:
+      213: 21300110
+    second: AnimationPlayerJ3_Spritesheet_24_05_55
+  - first:
+      213: 21300112
+    second: AnimationPlayerJ3_Spritesheet_24_05_56
+  - first:
+      213: 21300114
+    second: AnimationPlayerJ3_Spritesheet_24_05_57
+  - first:
+      213: 21300116
+    second: AnimationPlayerJ3_Spritesheet_24_05_58
+  - first:
+      213: 21300118
+    second: AnimationPlayerJ3_Spritesheet_24_05_59
+  - first:
+      213: 21300120
+    second: AnimationPlayerJ3_Spritesheet_24_05_60
+  - first:
+      213: 21300122
+    second: AnimationPlayerJ3_Spritesheet_24_05_61
+  - first:
+      213: 21300124
+    second: AnimationPlayerJ3_Spritesheet_24_05_62
+  - first:
+      213: 21300126
+    second: AnimationPlayerJ3_Spritesheet_24_05_63
+  - first:
+      213: 21300128
+    second: AnimationPlayerJ3_Spritesheet_24_05_64
+  - first:
+      213: 21300130
+    second: AnimationPlayerJ3_Spritesheet_24_05_65
+  - first:
+      213: 21300132
+    second: AnimationPlayerJ3_Spritesheet_24_05_66
+  - first:
+      213: 21300134
+    second: AnimationPlayerJ3_Spritesheet_24_05_67
+  - first:
+      213: 21300136
+    second: AnimationPlayerJ3_Spritesheet_24_05_68
+  - first:
+      213: 21300138
+    second: AnimationPlayerJ3_Spritesheet_24_05_69
+  - first:
+      213: 21300140
+    second: AnimationPlayerJ3_Spritesheet_24_05_70
+  - first:
+      213: 21300142
+    second: AnimationPlayerJ3_Spritesheet_24_05_71
+  - first:
+      213: 21300144
+    second: AnimationPlayerJ3_Spritesheet_24_05_72
+  - first:
+      213: 21300146
+    second: AnimationPlayerJ3_Spritesheet_24_05_73
+  - first:
+      213: 21300148
+    second: AnimationPlayerJ3_Spritesheet_24_05_74
+  - first:
+      213: 21300150
+    second: AnimationPlayerJ3_Spritesheet_24_05_75
+  - first:
+      213: 21300152
+    second: AnimationPlayerJ3_Spritesheet_24_05_76
+  - first:
+      213: 21300154
+    second: AnimationPlayerJ3_Spritesheet_24_05_77
+  - first:
+      213: 21300156
+    second: AnimationPlayerJ3_Spritesheet_24_05_78
+  - first:
+      213: 21300158
+    second: AnimationPlayerJ3_Spritesheet_24_05_79
+  - first:
+      213: 21300160
+    second: AnimationPlayerJ3_Spritesheet_24_05_80
+  - first:
+      213: 21300162
+    second: AnimationPlayerJ3_Spritesheet_24_05_81
+  - first:
+      213: 21300164
+    second: AnimationPlayerJ3_Spritesheet_24_05_82
+  - first:
+      213: 21300166
+    second: AnimationPlayerJ3_Spritesheet_24_05_83
+  - first:
+      213: 21300168
+    second: AnimationPlayerJ3_Spritesheet_24_05_84
+  - first:
+      213: 21300170
+    second: AnimationPlayerJ3_Spritesheet_24_05_85
+  - first:
+      213: 21300172
+    second: AnimationPlayerJ3_Spritesheet_24_05_86
+  - first:
+      213: 21300174
+    second: AnimationPlayerJ3_Spritesheet_24_05_87
+  - first:
+      213: 21300176
+    second: AnimationPlayerJ3_Spritesheet_24_05_88
+  - first:
+      213: 21300178
+    second: AnimationPlayerJ3_Spritesheet_24_05_89
+  - first:
+      213: 21300180
+    second: AnimationPlayerJ3_Spritesheet_24_05_90
+  - first:
+      213: 21300182
+    second: AnimationPlayerJ3_Spritesheet_24_05_91
+  - first:
+      213: 21300184
+    second: AnimationPlayerJ3_Spritesheet_24_05_92
+  - first:
+      213: 21300186
+    second: AnimationPlayerJ3_Spritesheet_24_05_93
+  - first:
+      213: 21300188
+    second: AnimationPlayerJ3_Spritesheet_24_05_94
+  - first:
+      213: 21300190
+    second: AnimationPlayerJ3_Spritesheet_24_05_95
+  - first:
+      213: 21300192
+    second: AnimationPlayerJ3_Spritesheet_24_05_96
+  - first:
+      213: 21300194
+    second: AnimationPlayerJ3_Spritesheet_24_05_97
+  - first:
+      213: 21300196
+    second: AnimationPlayerJ3_Spritesheet_24_05_98
+  - first:
+      213: 21300198
+    second: AnimationPlayerJ3_Spritesheet_24_05_99
+  - first:
+      213: 21300200
+    second: AnimationPlayerJ3_Spritesheet_24_05_100
+  - first:
+      213: 21300202
+    second: AnimationPlayerJ3_Spritesheet_24_05_101
+  - first:
+      213: 21300204
+    second: AnimationPlayerJ3_Spritesheet_24_05_102
+  - first:
+      213: 21300206
+    second: AnimationPlayerJ3_Spritesheet_24_05_103
+  - first:
+      213: 21300208
+    second: AnimationPlayerJ3_Spritesheet_24_05_104
+  - first:
+      213: 21300210
+    second: AnimationPlayerJ3_Spritesheet_24_05_105
+  - first:
+      213: 21300212
+    second: AnimationPlayerJ3_Spritesheet_24_05_106
+  - first:
+      213: 21300214
+    second: AnimationPlayerJ3_Spritesheet_24_05_107
+  - first:
+      213: 21300216
+    second: AnimationPlayerJ3_Spritesheet_24_05_108
+  - first:
+      213: 21300218
+    second: AnimationPlayerJ3_Spritesheet_24_05_109
+  - first:
+      213: 21300220
+    second: AnimationPlayerJ3_Spritesheet_24_05_110
+  - first:
+      213: 21300222
+    second: AnimationPlayerJ3_Spritesheet_24_05_111
+  - first:
+      213: 21300224
+    second: AnimationPlayerJ3_Spritesheet_24_05_112
+  - first:
+      213: 21300226
+    second: AnimationPlayerJ3_Spritesheet_24_05_113
+  - first:
+      213: 21300228
+    second: AnimationPlayerJ3_Spritesheet_24_05_114
+  - first:
+      213: 21300230
+    second: AnimationPlayerJ3_Spritesheet_24_05_115
+  - first:
+      213: 21300232
+    second: AnimationPlayerJ3_Spritesheet_24_05_116
+  - first:
+      213: 21300234
+    second: AnimationPlayerJ3_Spritesheet_24_05_117
+  - first:
+      213: 21300236
+    second: AnimationPlayerJ3_Spritesheet_24_05_118
+  - first:
+      213: 21300238
+    second: AnimationPlayerJ3_Spritesheet_24_05_119
+  - first:
+      213: 21300240
+    second: AnimationPlayerJ3_Spritesheet_24_05_120
+  - first:
+      213: 21300242
+    second: AnimationPlayerJ3_Spritesheet_24_05_121
+  - first:
+      213: 21300244
+    second: AnimationPlayerJ3_Spritesheet_24_05_122
+  - first:
+      213: 21300246
+    second: AnimationPlayerJ3_Spritesheet_24_05_123
+  - first:
+      213: 21300248
+    second: AnimationPlayerJ3_Spritesheet_24_05_124
+  - first:
+      213: 21300250
+    second: AnimationPlayerJ3_Spritesheet_24_05_125
+  - first:
+      213: 21300252
+    second: AnimationPlayerJ3_Spritesheet_24_05_126
+  - first:
+      213: 21300254
+    second: AnimationPlayerJ3_Spritesheet_24_05_127
+  - first:
+      213: 21300256
+    second: AnimationPlayerJ3_Spritesheet_24_05_128
+  - first:
+      213: 21300258
+    second: AnimationPlayerJ3_Spritesheet_24_05_129
+  - first:
+      213: 21300260
+    second: AnimationPlayerJ3_Spritesheet_24_05_130
+  - first:
+      213: 21300262
+    second: AnimationPlayerJ3_Spritesheet_24_05_131
+  - first:
+      213: 21300264
+    second: AnimationPlayerJ3_Spritesheet_24_05_132
+  - first:
+      213: 21300266
+    second: AnimationPlayerJ3_Spritesheet_24_05_133
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa5f1ccded1975458b36f02b2e0d9f0
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e547491a0c637b64caac02e217aa80e6
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6f590aed2e11845a6ee519f8d1c25d
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd91293835b8ce14b9a5b978c86094e0
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_4
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06052f52749a8644b05bcfc86133243
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_5
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bf9a1114f59d04a8710e2cc1870bab
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_6
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e451f0fe2cdf34aa3fea409c238125
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_7
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70837c2c2853064a9ce78a5812bff0b
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_8
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c226e2405a5fd1241871e915b8544aa2
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_9
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9b39232d9aa284fb02e8f6d2078770
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_10
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4478cc63465a17147a1c007fe528172b
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_11
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6e7320de4f18949a9030556289c48b
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_12
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 3841
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60adbbec846dfb442b74a711ee61047e
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe000451335723345835896a50e49d67
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_14
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d61505f2a9d2f445b66c3cbb60d9700
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_15
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc888e0857bf9241ba017cad9a415b3
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_16
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cffa250f522384685036eafa69a74d
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_17
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405e9b0ca63cdd442a6235551b91e143
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_18
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416af0bf54d59904782092b6a36aed7d
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_19
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68f3e8f4ce1cc74fb4b30d2d0c04709
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_20
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed29d9d5b8395c4db2553585df97113
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_21
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.34, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493e4a45039905a459ef67c5dada7527
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_22
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.34, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099fe0d350bcc614f99230f95b6fc0f1
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_23
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.34, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6582ef18e9feca9478914f6879f6a5c2
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_24
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.34, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06841ba854a16954f811a5e5c235866e
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_25
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 3586
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.34, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea97527c070dcbf40be7d8fc100ea204
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09a3a2cc014a4447ab26d69134e0293
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_27
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4491ccca83dcf564bbdeab3357c09b21
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_28
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9392257ed562447aca73dd1ee2c81a
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_29
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235093421be5b8e4c84f888cfdaaf8e4
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_30
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806a948656e051740be277eae1864504
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_31
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e250cf2589c94d4fa64d80b9df8e41b
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_32
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a780ead1137cc134d967c87e48bcc624
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_33
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e45a245061bdc4da2deec0bdb11c2f
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_34
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ec48a03fdc7c24796823fa305cf023
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_35
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33678e708dde6074cb564ace6ba1a00e
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_36
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a862dd1f9dd1c0d4eb8aee2a31507138
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_37
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71fd52dd6bd8594fb630de21b8f25d7
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_38
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 3331
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc046c32187fa4349bfb10880b84dd5c
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b858d4b7c4d4de64a901078474aa8be8
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_40
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593a89040ff5f4f4f9c3e2e1a411152f
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_41
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76713d3b3ea529458502b2ef85b2501
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_42
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54623f67be87dda4cb40ce88815676ea
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_43
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979d0c0b8969c1f4298734a1b49cf7c2
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_44
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5338c4a144d877a4c8983ee09a4e3bb6
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_45
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb680bb15b52446499d115ee69bfd9a0
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_46
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3d0c9c5aee1d340bc769fc77261162
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_47
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa721fdf8a71134fa24e169c161c051
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_48
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08129aaf3e2f684bb553bc8479dc11b
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_49
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bf52245daeb774a902741b96f895f5
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_50
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9680e9af1e74ad64b82921c1702bb084
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_51
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 3076
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714305d927558df4dade875599b683f2
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0f577e91c84fc40bf137df01feb7cc
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_53
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0324b2a0bfb0a3b4f83b7586286583fa
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_54
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37431789f4c28fc4999a32156aa78e7d
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_55
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6056ff1553f654040b1612a7e386e59a
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_56
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72693d04db036e44087888c3bfde28f2
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_57
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb12dbf9ab139e449115121c66e1058
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_58
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8e84433a330fb4c8b7d486fd77ee57
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_59
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a58807f27b91234a9052de0f3b1c53c
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_60
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c45ae1d9d7187843be25b6c7356a377
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_61
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bce0629b3b9ed4eac4687914bc06f2
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_62
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5842f1f3457e5e844be37d4543faf793
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_63
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd14a648f1485d449c04ab46b4f5706
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_64
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 2821
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8113e5464127f5d40a3c65d8212e6c92
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218564f275d0a97488615a69f98427e0
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_66
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c67615233eea14b80552839200a84f
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_67
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f340e40dc8c404495a3e6e852fd65e
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_68
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1cb0377e1f4c44e96d33cb50810cfb
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_69
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6087b03cc7279342801612b4fd6dfbe
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_70
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09717ac2c7c7e2b43b73330f510bb64c
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_71
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e5b809d3f088e439e77a5f81f13350
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_72
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff213ff0783753d4cba3f874527dbadb
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_73
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5316a7166003cdb4bae00c240cbd3f27
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_74
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527793f6e488fd3489217f0a02105aa2
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_75
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2def194fa11fe4cac647e1d699ea96
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_76
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5c1b861a52aff479516f076aa3c797
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_77
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 2566
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27a0551f3861284087babdc71718692
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8e81fab4cdf594cb95c75ff35870a4
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_79
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94761e0b46d69043accee392c804e79
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_80
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa099f0f7cef93a4989d1bc1b9b1cbc3
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_81
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2644c7968969dc4f8eb924d0671b65b
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_82
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bd7b27d4dc4684eb8bf806fe4bdfc2
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_83
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdd26c16b9b3e148933ed461204ede4
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_84
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda66f10b757f0348a0b4552527a545d
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_85
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3419b7b82b84c4691b154593198c4d
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_86
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1608f2e50f4672844ab1eaef89cbf2ff
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_87
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea23e3f7207c6c045972e4891b96f44b
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_88
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee551d4fefea344fbb1ad9eceb38c6d
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_89
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe68a4fd59e0d142913b9b062a97bd8
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_90
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 2311
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a956f0bad146d04eb5e3797384891f6
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067698e09d578374da5c722ec479a7f0
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_92
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cf3a53eb7cac5468c89347451f3c22
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_93
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3e88aca6f2d01479fdc4c3435f14f1
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_94
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f4b3a350d734e429fa605bff6c00f9
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_95
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06fef6c2239b24468df0e1c466c0070
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_96
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe59ade6a2d57b44bc3dc555be7fbd9
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_97
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f27826692e808347a03ed9682a793be
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_98
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a9982fea7933b47983e125e1debe4d
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_99
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4647ca818a4a941a23628832cad87f
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_100
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0f3eda81e593b4694418eb8ad3b521
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_101
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c07918042975840931648dc4f4ae7d
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_102
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92f72ca4ff937345aa549177259f5f8
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_103
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 2056
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439d01c59209c034b991854e67ac0823
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef37d1c986a837a45a2ee75601cd0701
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_105
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a01766963db5044198556937f00d06b
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_106
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4358388e8d352534c8a5ba93aa95a842
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_107
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3a59c8a1931af49aeeca38a14646d4
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_108
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411681a14c4c1a84985b7e5d33e135fe
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_109
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e14717c5328474ebd2ba45579887b6
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_110
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d205c4b458aff2429809a3adbb2f283
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_111
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e1bc7fcb3144f43b0bb72020567136
+      internalID: 21300222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_112
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a997668d59dfeb34abad86d5d7bf8d16
+      internalID: 21300224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_113
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12663325bcb6f944698646916f9bc19e
+      internalID: 21300226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_114
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bcf8b60826429945b159557ae2842bf
+      internalID: 21300228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_115
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee3fb4c8f9da5b429a4ba09855f55a9
+      internalID: 21300230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_116
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 1801
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a0ac2e36bc2db4f9513c5db0992c8e
+      internalID: 21300232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965f0f39b21080c4e9149d710e07d2b1
+      internalID: 21300234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_118
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018e3168b13a9ba4aab0d21372ff70fd
+      internalID: 21300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_119
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69070a2d132658948b40ae4fd07f91d9
+      internalID: 21300238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_120
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c764a0a6ae26747858fe05a70cff33
+      internalID: 21300240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_121
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc04f2385ec82b24bb96e624f8069fd8
+      internalID: 21300242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_122
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45681d37025c3e1468b671391a027515
+      internalID: 21300244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_123
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3ee6b06d551094c9605a71ffb7a409
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_124
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadc9bae12400cc4b84bd35e265109d1
+      internalID: 21300248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_125
+      rect:
+        serializedVersion: 2
+        x: 2512
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30885e6a330454041b65ef2c2f138a64
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_126
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362e660534680034d97821a47a06c592
+      internalID: 21300252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_127
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb3b4fcfa00bfc4e87d9e528b4944ae
+      internalID: 21300254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_128
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1d86d26ef83e74aadf3b5001d69d69
+      internalID: 21300256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_129
+      rect:
+        serializedVersion: 2
+        x: 3768
+        y: 1546
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9a266e5593bbd488ac9c6e31640eb0
+      internalID: 21300258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1291
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.31746495, y: 0.48200062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ebec51644e1364695711b7c9636716
+      internalID: 21300260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_131
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1291
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.5000593, y: 0.7869227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c123e2d569927e4b8488578c544d974
+      internalID: 21300262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_132
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1291
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e167b3c5d0d4049a745a80d105a863
+      internalID: 21300264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimationPlayerJ3_Spritesheet_24_05_133
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1291
+        width: 314
+        height: 255
+      alignment: 9
+      pivot: {x: 0.385, y: 0.405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9299610a712f284fb91e76b34f1cebd
+      internalID: 21300266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 12d067adcdcdeda4db1951bcca45efb6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
