@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SIdle : SGround
 {
+    private readonly int jumpHash = Animator.StringToHash("Jump");
+
     public SIdle(Character character) : base(character)
     {
     }
@@ -21,7 +23,7 @@ public class SIdle : SGround
         }
         else if (character.InputReader.Jump && character.CanJump())
         {
-            character.Jump(Vector2.up);
+            character.Jump(Vector2.up, jumpHash);
         }
         else
         {

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e579d9a59f97b4f9e0a34d5dcb997e, type: 3}
+  m_Name: NewBaseStats
+  m_EditorClassIdentifier: 
+  healthMax: 100
+  groundSpeed: 10
+  airSpeed: 5
+  waterSpeed: 5
+  wallSlideSpeed: 2
+  groundAccelerationTime: 0.1
+  airAccelerationTime: 0.3
+  waterAccelerationTime: 0.2
+  wallSlideAccelerationTime: 0.3
+  jumpHeight: 2
+  timeToJumpApex: 0.3
+  jumpAmmount: 1
+  maxClimbAngle: 50
+  maxDescendAngle: 75
+  wallGrabTimeLimit: 2
+  wallJumpProportions: {x: 2, y: 0.5}
+  attack: 3

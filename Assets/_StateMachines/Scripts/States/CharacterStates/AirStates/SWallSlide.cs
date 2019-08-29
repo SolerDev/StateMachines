@@ -7,6 +7,7 @@ public class SWallSlide : SAir
     private Vector2 wallJumpDirection = Vector2.zero;
 
     private readonly int slidingHash = Animator.StringToHash("Sliding");
+    private readonly int jumpHash = Animator.StringToHash("Jump");
 
     //muito similar ao SWallGrab. Talvez devesse criar uma classe antes de ambos chama SWall
     public SWallSlide(Character character) : base(character)
@@ -49,7 +50,7 @@ public class SWallSlide : SAir
         if (character.InputReader.Jump && !character.Controller.Collisions.above)
         {
             character.Attributes.JumpsCount--;
-            character.Jump(wallJumpDirection);
+            character.Jump(wallJumpDirection, jumpHash);
         }
         else if (
             character.InputReader.DirY < 0f ||

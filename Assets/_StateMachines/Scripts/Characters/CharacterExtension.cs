@@ -45,9 +45,12 @@ public static class CharacterExtension
 
     public static void Glide(this Character character, Vector2 direction)
     {
-        if (character.IsWalledFromSide(character.Controller.Velocity.x))
+        float charDirection = !character.Controller.Velocity.x.Equals(0f) ? Mathf.Sign(direction.x) : 0f;
+        float inputDirection = !direction.x.Equals(0f) ? Mathf.Sign(direction.x) : 0f;
+
+        if (character.IsWalledFromSide(charDirection))
         {
-            character.WallGrab(Mathf.Sign(direction.x));
+            character.WallGrab(charDirection);
             return;
         }
 
@@ -56,10 +59,10 @@ public static class CharacterExtension
         //glide zerando air speed quando direction=0
         //por algum motivo isso funciona...
         //sem or oq está acontecendo
-        character.Attributes.AirSpeedSmoothing = velocity.x;
+        //character.Attributes.AirSpeedSmoothing = velocity.x;
         velocity.x = Mathf.SmoothDamp(
             velocity.x,
-            character.Attributes.AirSpeed * direction.x,
+            character.Attributes.AirSpeed * inputDirection,
             ref character.Attributes.AirSpeedSmoothing,
             character.Attributes.AirAccelerationTime);
 
@@ -69,10 +72,10 @@ public static class CharacterExtension
         //    targetVelX,
         //    ref character.Attributes.AirSpeedSmoothing,
         //    character.Attributes.AirAccelerationTime);
-
+        StaticRefs
         character.Controller.Velocity = velocity;
 
-        if (!character.Attributes.FacingDirection.x.Equals(Mathf.Sign(direction.x)))
+        if (!character.Attributes.FacingDirection.x.Equals(charDirection))
         {
             character.Face(direction);
         }
@@ -165,7 +168,7 @@ public static class CharacterExtension
 
     }
 
-    public static void Jump(this Character character, Vector2 direction)
+    public static void Jump(this Character character, Vector2 direction, int jumpHash)
     {
         Vector2 jumpSpeed = character.Controller.Velocity;
         jumpSpeed.x += direction.x * character.Attributes.JumpVelocity;
@@ -174,15 +177,18 @@ public static class CharacterExtension
         character.Controller.Velocity = jumpSpeed;
         character.Attributes.JumpsCount++;
 
-        //state transitions should be handled by the state machine, no the verbs
-        character.StateMachine.SwitchToState(typeof(SFall));
-        //animation transitions should be handled by the state machine, not the verbs
-        character.Anim.SetTrigger("Jump");
 
+        character.StateMachine.SwitchToState(typeof(SFall));
+
+
+        //latter change the way jumpHash is being passed
+        character.Anim.SetTrigger(jumpHash);
     }
 
     public static void WallGrab(this Character character, float wallSide)
     {
+        float charDirection = Mathf.Sign(character.Controller.Velocity.x);
+
         if (Mathf.Sign(character.Controller.Velocity.x).Equals(-wallSide))
         {
             //Debug.Log("signed velX: " + Math.Sign(character.Controller.Velocity.x));
@@ -412,6 +418,10 @@ public static class CharacterExtension
     /// <param name="side">LEFT = -1. RIGHT = 1 </param>
     public static bool SideCollidedAtPoint(this Character character, Vector2 collisionPoint, float side)
     {
+        if (side.Equals(0f))
+        { return false; }
+
+
         side = Mathf.Sign(side);
 
         Vector2 checkDirection = new Vector2(side, 0);
@@ -448,9 +458,6 @@ public static class CharacterExtension
 
     public static bool SideTopCollided(this Character character, float side)
     {
-        if (side.Equals(0f))
-            return false;
-
         Vector2 collisionPoint = side.Equals(1f) ? character.Controller.CollBounds.topRight : character.Controller.CollBounds.topLeft;
         bool sideCollided = character.SideCollidedAtPoint(collisionPoint, side);
 
@@ -461,9 +468,6 @@ public static class CharacterExtension
 
     public static bool SideMiddleCollided(this Character character, float side)
     {
-        if (side.Equals(0f))
-            return false;
-
         Vector2 collisionPoint = side.Equals(1f) ? character.Controller.CollBounds.middleRight : character.Controller.CollBounds.middleLeft;
         bool sideCollided = character.SideCollidedAtPoint(collisionPoint, side);
 
@@ -474,9 +478,6 @@ public static class CharacterExtension
 
     public static bool SideKneeCollided(this Character character, float side)
     {
-        if (side.Equals(0f))
-            return false;
-
         Vector2 collisionPoint = side.Equals(1f) ? character.Controller.CollBounds.middleRight : character.Controller.CollBounds.middleLeft;
         collisionPoint.y -= character.Height() / 4;
         bool sideCollided = character.SideCollidedAtPoint(collisionPoint, side);
@@ -488,9 +489,6 @@ public static class CharacterExtension
 
     public static bool SideBottomCollided(this Character character, float side)
     {
-        if (side.Equals(0f))
-            return false;
-
         Vector2 collisionPoint = side.Equals(1f) ? character.Controller.CollBounds.bottomRight : character.Controller.CollBounds.bottomLeft;
         bool sideCollided = character.SideCollidedAtPoint(collisionPoint, side);
 

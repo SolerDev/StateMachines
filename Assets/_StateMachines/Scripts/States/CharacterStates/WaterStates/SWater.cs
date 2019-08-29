@@ -6,6 +6,7 @@ using UnityEngine;
 public class SWater : State
 {
     private readonly int underwaterHash = Animator.StringToHash("Underwater");
+    private readonly int jumpHash = Animator.StringToHash("Jump");
 
     public SWater(Character character) : base(character)
     {
@@ -39,7 +40,7 @@ public class SWater : State
         }
         else if (character.InputReader.Jump && !character.IsWaterAbove())
         {
-            character.Jump(Vector2.up);
+            character.Jump(Vector2.up, jumpHash);
         }
 
         return ft;

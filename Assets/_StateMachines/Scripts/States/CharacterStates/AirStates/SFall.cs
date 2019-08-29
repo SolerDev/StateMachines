@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SFall : SAir
 {
+    private readonly int jumpHash = Animator.StringToHash("Jump");
+
     public SFall(Character character) : base(character)
     {
     }
@@ -19,7 +21,7 @@ public class SFall : SAir
 
         if (character.InputReader.Jump && character.CanJump())
         {
-            character.Jump(Vector2.up);
+            character.Jump(Vector2.up, jumpHash);
         }
         else
         {

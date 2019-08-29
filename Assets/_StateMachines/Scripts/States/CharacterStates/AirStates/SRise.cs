@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SRise : SAir
 {
+    private readonly int jumpHash = Animator.StringToHash("Jump");
+
     public SRise(Character character) : base(character)
     {
     }
@@ -25,7 +27,7 @@ public class SRise : SAir
         }
         else if (character.InputReader.Jump && character.CanJump())
         {
-            character.Jump(Vector2.up);
+            character.Jump(Vector2.up, jumpHash);
         }
         else
         {

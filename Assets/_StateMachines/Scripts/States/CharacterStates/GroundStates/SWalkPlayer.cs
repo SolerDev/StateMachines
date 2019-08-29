@@ -11,6 +11,7 @@ public class SWalkPlayer : SGround
     private Vector2 facingDirection = Vector2.one;
 
     private readonly int walkingHash = Animator.StringToHash("Moving");
+    private readonly int jumpHash = Animator.StringToHash("Jump");
 
     public SWalkPlayer(PlayerCharacter character) : base(character)
     {
@@ -52,7 +53,7 @@ public class SWalkPlayer : SGround
         }
         else if (character.InputReader.Jump && character.CanJump())
         {
-            character.Jump(Vector2.up);
+            character.Jump(Vector2.up, jumpHash);
         }
         else
         {
