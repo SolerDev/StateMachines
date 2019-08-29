@@ -32,7 +32,7 @@ public class SRise : SAir
         else
         {
             character.Controller.Velocity.y += character.Attributes.Gravity;
-            character.Glide(direction);
+            character.Glide(direction.x);
         }
 
 

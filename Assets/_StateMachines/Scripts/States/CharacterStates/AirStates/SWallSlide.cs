@@ -12,8 +12,6 @@ public class SWallSlide : SAir
     //muito similar ao SWallGrab. Talvez devesse criar uma classe antes de ambos chama SWall
     public SWallSlide(Character character) : base(character)
     {
-        wallJumpDirection.x = character.Attributes.wallJumpProportions.x;
-        wallJumpDirection.y = character.Attributes.wallJumpProportions.y;
     }
 
     public override void OnEnter()
@@ -27,6 +25,8 @@ public class SWallSlide : SAir
             StaticRefs.MASK_GROUND) ?
             -1 : 1;
 
+        wallJumpDirection.x = character.Attributes.wallJumpProportions.x;
+        wallJumpDirection.y = character.Attributes.wallJumpProportions.y;
         wallJumpDirection.x *= -wallSide;
 
         anim.SetBool(slidingHash, true);

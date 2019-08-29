@@ -27,7 +27,7 @@ public class SFall : SAir
         {
             //apply gravity
             character.Controller.Velocity.y += character.Attributes.Gravity;
-            character.Glide(direction);
+            character.Glide(direction.x);
             anim.SetFloat(velYHash, character.Controller.Velocity.y);
         }
         return ft;

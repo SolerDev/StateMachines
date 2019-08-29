@@ -4,114 +4,111 @@ public static class CharacterExtension
 {
     #region Character Verbs
 
-    public static void Walk(this Character character, Vector2 direction)
+    public static void Walk(this Character character, float direction)
     {
-        Vector2 velocity = character.Controller.Velocity;
+        Vector2 newVelocity = character.Controller.Velocity;
+        float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
+        float inputDirection = direction.Equals(0f) ? 0f : Mathf.Sign(direction);
 
-        //smooth reference fica louco
-        velocity.x = /*direction.x.Equals(0f) ?
-            0f
-            :*/
+        //if (character.IsEdgeFromSide(inputDirection))
+        //{
+        //    character.Climb(inputDirection);
+        //}
+        //else if (character.IsStepFromSide(inputDirection))
+        //{
+        //    character.Step(inputDirection);
+        //}
+
+        newVelocity.x =
             Mathf.SmoothDamp(
-            velocity.x,
-            character.Attributes.GroundSpeed * direction.x,
+            newVelocity.x,
+            character.Attributes.GroundSpeed * direction,
             ref character.Attributes.GroundSpeedSmoothing,
             character.Attributes.GroundAccelerationTime);
 
-        if (!character.Attributes.FacingDirection.x.Equals(Mathf.Sign(direction.x)))
+        if (!character.Attributes.FacingDirection.x.Equals(inputDirection))
         {
-            character.Face(direction);
+            //face the direction the character is trying to move
+            character.Face(inputDirection);
         }
 
-        character.Controller.Velocity = velocity;
+        character.Controller.Velocity = newVelocity;
     }
 
     public static void Swim(this Character character, Vector2 direction)
     {
-        Vector2 velocity = character.Controller.Velocity;
+        Vector2 newVelocity = character.Controller.Velocity;
+        float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
+        float inputDirection = direction.x.Equals(0f) ? 0f : Mathf.Sign(direction.x);
 
-        velocity = Vector2.SmoothDamp(
-            velocity,
+        newVelocity = Vector2.SmoothDamp(
+            newVelocity,
             direction * character.Attributes.WaterSpeed,
             ref character.Attributes.WaterSpeedSmoothingVector,
             character.Attributes.WaterAccelerationTime);
 
-        if (!character.Attributes.FacingDirection.x.Equals(Mathf.Sign(direction.x)))
+        if (!character.Attributes.FacingDirection.x.Equals(inputDirection))
         {
-            character.Face(direction);
+            character.Face(inputDirection);
         }
-
     }
 
-    public static void Glide(this Character character, Vector2 direction)
+    public static void Glide(this Character character, float direction)
     {
-        float charDirection = !character.Controller.Velocity.x.Equals(0f) ? Mathf.Sign(direction.x) : 0f;
-        float inputDirection = !direction.x.Equals(0f) ? Mathf.Sign(direction.x) : 0f;
+        Vector2 newVelocity = character.Controller.Velocity;
+        float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
+        float inputDirection = direction.Equals(0f) ? 0f : Mathf.Sign(direction);
 
-        if (character.IsWalledFromSide(charDirection))
+        if (character.IsWalledFromSide(velocityDirection))
         {
-            character.WallGrab(charDirection);
+            //Debug.Log("velocityDirection: " + velocityDirection + " characterVelocity: " + newVelocity);
+
+            character.WallGrab(velocityDirection);
             return;
         }
 
-        Vector2 velocity = character.Controller.Velocity;
 
         //glide zerando air speed quando direction=0
-        //por algum motivo isso funciona...
-        //sem or oq está acontecendo
-        //character.Attributes.AirSpeedSmoothing = velocity.x;
-        velocity.x = Mathf.SmoothDamp(
-            velocity.x,
-            character.Attributes.AirSpeed * inputDirection,
+        newVelocity.x = Mathf.SmoothDamp(
+            newVelocity.x,
+            character.Attributes.AirSpeed * direction,
             ref character.Attributes.AirSpeedSmoothing,
             character.Attributes.AirAccelerationTime);
 
-        //float targetVelX = character.Attributes.AirSpeed * direction.x;
-        //velocity.x = Mathf.SmoothDamp(
-        //    velocity.x,
-        //    targetVelX,
-        //    ref character.Attributes.AirSpeedSmoothing,
-        //    character.Attributes.AirAccelerationTime);
-        StaticRefs
-        character.Controller.Velocity = velocity;
+        character.Controller.Velocity = newVelocity;
 
-        if (!character.Attributes.FacingDirection.x.Equals(charDirection))
+        if (!character.Attributes.FacingDirection.x.Equals(inputDirection))
         {
-            character.Face(direction);
+            character.Face(inputDirection);
         }
     }
 
-    public static void Face(this Character character, Vector2 direction)
+    public static void Face(this Character character, float direction)
     {
-        if (!direction.x.Equals(0f))
+        if (!(direction.Equals(-1f) || direction.Equals(0f) || direction.Equals(1f)))
+        { Debug.LogError("The character is trying to face an invalid direction"); }
+
+
+        if (!direction.Equals(0f))
         {
-            character.Attributes.FacingDirection.x = direction.x;
+            character.Attributes.FacingDirection.x = direction;
             character.Trans.localScale = character.Attributes.FacingDirection;
         }
     }
 
-    public static void Step(this Character character, Vector2 direction)
+    public static void Step(this Character character, float direction)
     {
-
-        Vector2 rayOrigin = direction.x > 0f ? character.CurrentColl.MiddleRight() : character.CurrentColl.MiddleLeft();
-        //Vector2 originOffset = Vector2.right * direction.x * character.Attributes.SkinTickness;
-        Vector2 originOffset = Vector2.right * direction.x * character.Controller.SkinWidth;
+        Vector2 rayOrigin = direction.Equals(1f) ? character.Controller.CollBounds.middleRight : character.Controller.CollBounds.middleLeft;
+        Vector2 originOffset = Vector2.right * direction * character.Controller.SkinWidth;
         rayOrigin += originOffset;
 
         RaycastHit2D hit = Physics2D.Raycast(
             rayOrigin,
             Vector2.down,
-            character.CurrentColl.size.y / 2,
+            character.Height() / 2,
             StaticRefs.MASK_FLOOR);
 
-        //float characterTranslateOffset = character.MainColl.size.x / 2 * direction.x + character.Attributes.LateralSkinTickness;
-        Vector2 finalPos = hit.point +
-            Vector2.up *
-                (character.Height() / 2 +
-            //character.Attributes.SkinTickness * 2f);
-            character.Controller.SkinWidth * 2f);
-        //Vector2 finalPos = finalPos + (Vector2) character.Trans.position;
-
+        Vector2 finalPos = hit.point + Vector2.up * (character.Height() / 2 + character.Controller.SkinWidth * 2f);
         character.Trans.position = finalPos;
 
 
@@ -120,18 +117,12 @@ public static class CharacterExtension
         Color debugColor = hit ? Color.red : Color.yellow;
         Debug.DrawRay(rayOrigin, Vector2.down * character.Height() / 2, debugColor, 2f);
 
-
-        //Debug.Log(raycastHit.collider.name);
-        //Debug.Log(character.MainColl.MiddleRight());
-        //Debug.Log(rayOrigin);
-        //Debug.Log(newPos);
-
         #endregion
 
 
     }
 
-    public static void Climb(this Character character, Vector2 direction)
+    public static void Climb(this Character character, float direction)
     {
         //Vector2 rayOrigin = direction.x > 0f ? character.MainColl.TopRight() : character.MainColl.TopLeft();
         //Vector2 originOffset = Vector2.right * direction.x * character.Attributes.LateralSkinTickness;
@@ -170,35 +161,26 @@ public static class CharacterExtension
 
     public static void Jump(this Character character, Vector2 direction, int jumpHash)
     {
-        Vector2 jumpSpeed = character.Controller.Velocity;
-        jumpSpeed.x += direction.x * character.Attributes.JumpVelocity;
-        jumpSpeed.y = direction.y * character.Attributes.JumpVelocity;
+        Debug.Log("jumpDirection: " + direction);
 
-        character.Controller.Velocity = jumpSpeed;
+        Vector2 newVelocity = character.Controller.Velocity;
+        newVelocity.x += direction.x * character.Attributes.JumpVelocity;
+        newVelocity.y = direction.y * character.Attributes.JumpVelocity;
+
+        character.Controller.Velocity = newVelocity;
         character.Attributes.JumpsCount++;
-
-
-        character.StateMachine.SwitchToState(typeof(SFall));
-
 
         //latter change the way jumpHash is being passed
         character.Anim.SetTrigger(jumpHash);
+        character.StateMachine.SwitchToState(typeof(SFall));
+
+
     }
 
     public static void WallGrab(this Character character, float wallSide)
     {
-        float charDirection = Mathf.Sign(character.Controller.Velocity.x);
-
-        if (Mathf.Sign(character.Controller.Velocity.x).Equals(-wallSide))
-        {
-            //Debug.Log("signed velX: " + Math.Sign(character.Controller.Velocity.x));
-            //Debug.Log("default velX: " + (character.Controller.Velocity.x));
-            character.Face(Vector2.right * -wallSide);
-        }
-
+        character.Face(wallSide);
         character.Controller.Velocity = Vector2.zero;
-
-
 
         //state transitions should be handled by the state machine
         character.StateMachine.SwitchToState(typeof(SWallGrab));
@@ -206,16 +188,16 @@ public static class CharacterExtension
 
     public static void WallSlide(this Character character)
     {
-        Vector2 velocity = Vector2.zero;
+        Vector2 newVelocity = Vector2.zero;
 
-        velocity.y = Mathf.SmoothDamp(
-            velocity.y,
+        newVelocity.y = Mathf.SmoothDamp(
+            newVelocity.y,
             //negative target because the character must go down similarly to gravity
             -character.Attributes.WallSlideSpeed,
             ref character.Attributes.AirSpeedSmoothing,
             character.Attributes.WallSlideAccelerationTime);
 
-        character.Controller.Velocity = velocity;
+        character.Controller.Velocity = newVelocity;
     }
 
     #endregion

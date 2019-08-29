@@ -32,7 +32,7 @@ public class SIdle : SGround
             //{
             //    character.Walk(Vector2.zero);
             //}
-            character.Walk(Vector2.zero);
+            character.Walk(0f);
         }
 
         return ft;

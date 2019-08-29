@@ -57,7 +57,7 @@ public class SWalkPlayer : SGround
         }
         else
         {
-            character.Walk(direction);
+            character.Walk(direction.x);
             //anim.SetFloat(velXHash, Mathf.Abs(character.Controller.Velocity.x));
         }
         return ft;
