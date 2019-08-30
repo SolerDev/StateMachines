@@ -23,7 +23,7 @@ public class CharacterController2D: RaycastController2D
         //gravity
         //Velocity.y += character.Attributes.Gravity;
 
-        if (collisions.above || collisions.bellow)
+        if (Collisions.above || Collisions.bellow)
         {
             //Debug.Log("velocity = " + Velocity);
             Velocity.y = 0f;
@@ -32,7 +32,7 @@ public class CharacterController2D: RaycastController2D
         }
 
         //reset all collisions after all of it's consequences have been applied
-        collisions.Reset();
+        Collisions.Reset();
 
         if (!Velocity.x.Equals(0f)) { HorizontalCollisions(ref Velocity); }
         if (!Velocity.y.Equals(0f)) { VerticalCollisions(ref Velocity); }
@@ -42,7 +42,7 @@ public class CharacterController2D: RaycastController2D
     {
         if (!Enabled) { return; }
 
-        collisions.velocityOld = Velocity;
+        Collisions.velocityOld = Velocity;
 
         UpdateColliderBounds();
         UpdatePhysics();
@@ -72,20 +72,20 @@ public class CharacterController2D: RaycastController2D
                 rayLenght = hit.distance;
 
                 //HANDLE SLOPES
-                if (collisions.climbingSlope)
+                if (Collisions.climbingSlope)
                 {
-                    velocity.x = velocity.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
+                    velocity.x = velocity.y / Mathf.Tan(Collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(velocity.x);
                 }
 
-                collisions.bellow = directionY.Equals(-1f);
-                collisions.above = directionY.Equals(1f);
+                Collisions.bellow = directionY.Equals(-1f);
+                Collisions.above = directionY.Equals(1f);
             }
 
             Color debugColor = hit ? Color.red : Color.green;
             Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLenght, debugColor);
         }
 
-        if (collisions.climbingSlope)
+        if (Collisions.climbingSlope)
         {
             float directionX = Mathf.Sign(velocity.x);
             rayLenght = Mathf.Abs(velocity.x) + skinWidth;
@@ -95,10 +95,10 @@ public class CharacterController2D: RaycastController2D
             if (hit)
             {
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-                if (!slopeAngle.Equals(collisions.slopeAngle))
+                if (!slopeAngle.Equals(Collisions.slopeAngle))
                 {
                     velocity.x = (hit.distance - skinWidth) * directionX;
-                    collisions.slopeAngle = slopeAngle;
+                    Collisions.slopeAngle = slopeAngle;
                 }
             }
         }
@@ -121,14 +121,14 @@ public class CharacterController2D: RaycastController2D
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
                 if (i.Equals(0) && slopeAngle < character.Attributes.MaxClimbAngle)
                 {
-                    if (collisions.descendingSlope)
+                    if (Collisions.descendingSlope)
                     {
                         //handle transitions between descending and rising slopes
-                        collisions.descendingSlope = false;
-                        velocity = collisions.velocityOld;
+                        Collisions.descendingSlope = false;
+                        velocity = Collisions.velocityOld;
                     }
                     float distanceToSlope = 0f;
-                    if (!slopeAngle.Equals(collisions.slopeAngleOld))
+                    if (!slopeAngle.Equals(Collisions.slopeAngleOld))
                     {
                         distanceToSlope = hit.distance - skinWidth;
                         velocity.x -= distanceToSlope * directionX;
@@ -137,19 +137,19 @@ public class CharacterController2D: RaycastController2D
                     velocity.x += distanceToSlope * directionX;
                 }
 
-                if (!collisions.climbingSlope || slopeAngle > character.Attributes.MaxClimbAngle)
+                if (!Collisions.climbingSlope || slopeAngle > character.Attributes.MaxClimbAngle)
                 {
                     velocity.x = (hit.distance - SkinWidth) * directionX;
                     rayLenght = hit.distance;
 
 
-                    if (collisions.climbingSlope)
+                    if (Collisions.climbingSlope)
                     {
-                        velocity.y = Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad * Mathf.Abs(velocity.x));
+                        velocity.y = Mathf.Tan(Collisions.slopeAngle * Mathf.Deg2Rad * Mathf.Abs(velocity.x));
                     }
 
-                    collisions.left = directionX.Equals(-1f);
-                    collisions.right = directionX.Equals(1f);
+                    Collisions.left = directionX.Equals(-1f);
+                    Collisions.right = directionX.Equals(1f);
                 }
             }
 
@@ -166,9 +166,9 @@ public class CharacterController2D: RaycastController2D
         {
             velocity.y = climbVelocityY;
             velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
-            collisions.bellow = true;
-            collisions.climbingSlope = true;
-            collisions.slopeAngle = slopeAngle;
+            Collisions.bellow = true;
+            Collisions.climbingSlope = true;
+            Collisions.slopeAngle = slopeAngle;
         }
     }
 
@@ -196,9 +196,9 @@ public class CharacterController2D: RaycastController2D
                         velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
                         velocity.y -= descendVelocityY;
 
-                        collisions.slopeAngle = slopeAngle;
-                        collisions.descendingSlope = true;
-                        collisions.bellow = true;
+                        Collisions.slopeAngle = slopeAngle;
+                        Collisions.descendingSlope = true;
+                        Collisions.bellow = true;
                     }
                 }
             }

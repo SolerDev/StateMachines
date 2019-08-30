@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class RaycastController2D
 {
@@ -8,7 +6,7 @@ public abstract class RaycastController2D
 
     protected Transform trans;
     protected BoxCollider2D currentColl;
-    
+
     //wtf do I do with these three omg its killing me I'm going to die bem morrido
     protected const float skinWidth = .5f;
     public float SkinWidth => skinWidth;
@@ -18,7 +16,7 @@ public abstract class RaycastController2D
 
     protected float horRaySpacing;
     protected float verRaySpacing;
-    
+
     public bool Enabled = true;
     public Vector2 Velocity;
 
@@ -39,7 +37,9 @@ public abstract class RaycastController2D
         public bool left, right;
         public bool climbingSlope, descendingSlope;
         public float slopeAngle, slopeAngleOld;
+
         public Vector2 velocityOld;
+        public float facingDirection;
 
         public void Reset()
         {
@@ -51,8 +51,7 @@ public abstract class RaycastController2D
             slopeAngle = 0f;
         }
     }
-    protected CollisionInfo collisions;
-    public CollisionInfo Collisions { get => collisions; }
+    public CollisionInfo Collisions;
 
     #endregion
 

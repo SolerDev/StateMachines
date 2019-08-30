@@ -26,7 +26,7 @@ public static class CharacterExtension
             ref character.Attributes.GroundSpeedSmoothing,
             character.Attributes.GroundAccelerationTime);
 
-        if (!character.Attributes.FacingDirection.x.Equals(inputDirection))
+        if (!character.Controller.Collisions.facingDirection.Equals(inputDirection))
         {
             //face the direction the character is trying to move
             character.Face(inputDirection);
@@ -47,7 +47,7 @@ public static class CharacterExtension
             ref character.Attributes.WaterSpeedSmoothingVector,
             character.Attributes.WaterAccelerationTime);
 
-        if (!character.Attributes.FacingDirection.x.Equals(inputDirection))
+        if (!character.Controller.Collisions.facingDirection.Equals(inputDirection))
         {
             character.Face(inputDirection);
         }
@@ -61,11 +61,15 @@ public static class CharacterExtension
 
         if (character.IsWalledFromSide(velocityDirection))
         {
-            //Debug.Log("velocityDirection: " + velocityDirection + " characterVelocity: " + newVelocity);
-
+            //Debug.Log("velDir: " + velocityDirection + " newVel: " + newVelocity);
             character.WallGrab(velocityDirection);
             return;
         }
+        //else if (character.IsWalledFromSide(-character.Controller.Collisions.facingDirection))
+        //{
+        //    character.WallGrab(-character.Controller.Collisions.facingDirection);
+        //    return;
+        //}
 
 
         //glide zerando air speed quando direction=0
@@ -77,7 +81,7 @@ public static class CharacterExtension
 
         character.Controller.Velocity = newVelocity;
 
-        if (!character.Attributes.FacingDirection.x.Equals(inputDirection))
+        if (!character.Controller.Collisions.facingDirection.Equals(inputDirection))
         {
             character.Face(inputDirection);
         }
@@ -91,8 +95,8 @@ public static class CharacterExtension
 
         if (!direction.Equals(0f))
         {
-            character.Attributes.FacingDirection.x = direction;
-            character.Trans.localScale = character.Attributes.FacingDirection;
+            character.Controller.Collisions.facingDirection = direction;
+            character.Trans.localScale = Vector2.up + Vector2.right * character.Controller.Collisions.facingDirection;
         }
     }
 
@@ -161,7 +165,7 @@ public static class CharacterExtension
 
     public static void Jump(this Character character, Vector2 direction, int jumpHash)
     {
-        Debug.Log("jumpDirection: " + direction);
+        //Debug.Log("jumpDirection: " + direction);
 
         Vector2 newVelocity = character.Controller.Velocity;
         newVelocity.x += direction.x * character.Attributes.JumpVelocity;
@@ -174,6 +178,28 @@ public static class CharacterExtension
         character.Anim.SetTrigger(jumpHash);
         character.StateMachine.SwitchToState(typeof(SFall));
 
+
+    }
+
+    public static void WallJump(this Character character, Vector2 inputDirection, int jumpHash)
+    {
+        //Debug.Log("wallJumpDirection: " + direction);
+
+
+
+
+
+        Vector2 newVelocity = character.Controller.Velocity;
+
+        newVelocity.x += inputDirection.x * character.Attributes.JumpVelocity;
+        newVelocity.y = inputDirection.y * character.Attributes.JumpVelocity;
+
+        character.Controller.Velocity = newVelocity;
+        character.Attributes.JumpsCount++;
+
+        //latter change the way jumpHash is being passed
+        character.Anim.SetTrigger(jumpHash);
+        character.StateMachine.SwitchToState(typeof(SFall));
 
     }
 
@@ -403,9 +429,11 @@ public static class CharacterExtension
         if (side.Equals(0f))
         { return false; }
 
+        Debug.Log("side collided at point: " + side);
 
         side = Mathf.Sign(side);
 
+        //voltar daqui
         Vector2 checkDirection = new Vector2(side, 0);
 
         //checkDirection = Vector2.right * side;

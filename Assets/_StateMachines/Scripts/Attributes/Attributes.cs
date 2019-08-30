@@ -13,7 +13,7 @@ public class Attributes
     public int HealthMax;
     public int HealthCurrent;
 
-    public Vector2 FacingDirection;
+    //public Vector2 FacingDirection;
 
     public float GroundSpeedSmoothing;
     public float AirSpeedSmoothing;
@@ -64,7 +64,7 @@ public class Attributes
         HealthMax = baseStats.HealthMax;
         HealthCurrent = HealthMax;
 
-        FacingDirection = Vector2.one;
+        //FacingDirection = Vector2.one;
 
         GroundSpeed = baseStats.GroundSpeed;
         AirSpeed = baseStats.AirSpeed;
