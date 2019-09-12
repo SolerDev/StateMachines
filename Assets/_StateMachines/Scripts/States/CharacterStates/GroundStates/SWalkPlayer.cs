@@ -6,7 +6,7 @@ public class SWalkPlayer : SGround
     #region Properties
 
     protected new PlayerCharacter character { get => (PlayerCharacter)base.character; set => base.character = value; }
-    
+
     private Vector2 moveVector = Vector2.zero;
     private Vector2 facingDirection = Vector2.one;
 
@@ -40,7 +40,7 @@ public class SWalkPlayer : SGround
         {
             return ft;
         }
-        
+
         Vector2 direction = character.InputReader.Direction;
 
         if (direction.x.Equals(0f))
@@ -54,6 +54,14 @@ public class SWalkPlayer : SGround
         else if (character.InputReader.Jump && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
+        }
+        else if (character.IsEdgeFromSide(direction.x))
+        {
+            ft = typeof(SWallClimb);
+        }
+        else if (character.IsStepFromSide(direction.x))
+        {
+            character.Step(direction.x);
         }
         else
         {

@@ -10,14 +10,17 @@ public static class CharacterExtension
         float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
         float inputDirection = direction.Equals(0f) ? 0f : Mathf.Sign(direction);
 
-        //if (character.IsEdgeFromSide(inputDirection))
-        //{
-        //    character.Climb(inputDirection);
-        //}
-        //else if (character.IsStepFromSide(inputDirection))
-        //{
-        //    character.Step(inputDirection);
-        //}
+        if (character.IsEdgeFromSide(inputDirection))
+        {
+            //character.WallClimb(inputDirection);
+            //return;
+        }
+        else if (character.IsStepFromSide(inputDirection))
+        {
+            character.Step(inputDirection);
+            return;
+        }
+
 
         newVelocity.x =
             Mathf.SmoothDamp(
@@ -65,11 +68,6 @@ public static class CharacterExtension
             character.WallGrab(velocityDirection);
             return;
         }
-        //else if (character.IsWalledFromSide(-character.Controller.Collisions.facingDirection))
-        //{
-        //    character.WallGrab(-character.Controller.Collisions.facingDirection);
-        //    return;
-        //}
 
 
         //glide zerando air speed quando direction=0
@@ -126,42 +124,11 @@ public static class CharacterExtension
 
     }
 
-    public static void Climb(this Character character, float direction)
-    {
-        //Vector2 rayOrigin = direction.x > 0f ? character.MainColl.TopRight() : character.MainColl.TopLeft();
-        //Vector2 originOffset = Vector2.right * direction.x * character.Attributes.LateralSkinTickness;
-        //rayOrigin += originOffset;
-
-        //RaycastHit2D hit = Physics2D.Raycast(
-        //    rayOrigin,
-        //    Vector2.down,
-        //    character.MainColl.size.y / 2,
-        //    StaticRefs.MASK_FLOOR);
-
-        ////float characterTranslateOffset = character.MainColl.size.x / 2 * direction.x + character.Attributes.LateralSkinTickness;
-        //Vector2 finalPos = hit.point +
-        //    Vector2.up *
-        //        (character.Height() / 2 +
-        //        character.Attributes.FootSkinTickness * 2f);
-        ////Vector2 finalPos = finalPos + (Vector2) character.Trans.position;
-
-        //character.RB.position = finalPos;
+    //public static void WallClimb(this Character character, float direction)
+    //{
 
 
-        //#region Debugging
-
-        //Color debugColor = hit ? Color.red : Color.yellow;
-        //Debug.DrawRay(rayOrigin, Vector2.down * character.Height() / 2, debugColor, 2f);
-
-
-        ////Debug.Log(raycastHit.collider.name);
-        ////Debug.Log(character.MainColl.MiddleRight());
-        ////Debug.Log(rayOrigin);
-        ////Debug.Log(newPos);
-
-        //#endregion
-
-    }
+    //}
 
     public static void Jump(this Character character, Vector2 direction, int jumpHash)
     {
@@ -429,7 +396,7 @@ public static class CharacterExtension
         if (side.Equals(0f))
         { return false; }
 
-        Debug.Log("side collided at point: " + side);
+        //Debug.Log("side collided at point: " + side);
 
         side = Mathf.Sign(side);
 

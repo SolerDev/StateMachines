@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class PlayerCharacter : Character
+﻿public class PlayerCharacter : Character
 {
     #region Properties
 
@@ -17,6 +15,7 @@ public class PlayerCharacter : Character
     private SSwim swimState;
     private SWallGrab wallGrabState;
     private SWallSlide wallSlideState;
+    private SWallClimb wallClimbState;
 
     #endregion
 
@@ -65,8 +64,11 @@ public class PlayerCharacter : Character
         wallGrabState = new SWallGrab(this);
         states.Add(typeof(SWallGrab), wallGrabState);
 
-        wallSlideState= new SWallSlide(this);
+        wallSlideState = new SWallSlide(this);
         states.Add(typeof(SWallSlide), wallSlideState);
+
+        wallClimbState = new SWallClimb(this);
+        states.Add(typeof(SWallClimb), wallClimbState);
 
         //playerSpecific ------------------------------------------------------------------
         walkState = new SWalkPlayer(this);

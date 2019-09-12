@@ -23,6 +23,10 @@ public class SFall : SAir
         {
             character.Jump(Vector2.up, jumpHash);
         }
+        else if (character.IsEdgeFromSide(direction.x))
+        {
+            ft = typeof(SWallClimb);
+        }
         else
         {
             //apply gravity

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CharacterController2D: RaycastController2D
+public class CharacterController2D : RaycastController2D
 {
     private Character character;
 
     public CharacterController2D(Character character)
     {
-        this.Enabled= true;
+        this.Enabled = true;
 
         this.character = character;
         this.trans = character.Trans;
@@ -34,20 +31,23 @@ public class CharacterController2D: RaycastController2D
         //reset all collisions after all of it's consequences have been applied
         Collisions.Reset();
 
-        if (!Velocity.x.Equals(0f)) { HorizontalCollisions(ref Velocity); }
-        if (!Velocity.y.Equals(0f)) { VerticalCollisions(ref Velocity); }
+        if (!Velocity.x.Equals(0f))
+        { HorizontalCollisions(ref Velocity); }
+        if (!Velocity.y.Equals(0f))
+        { VerticalCollisions(ref Velocity); }
     }
 
     public void Move()
     {
-        if (!Enabled) { return; }
+        if (!Enabled)
+        { return; }
 
         Collisions.velocityOld = Velocity;
 
         UpdateColliderBounds();
         UpdatePhysics();
 
-        if (Velocity.y<0f)
+        if (Velocity.y < 0f)
         {
             DescendSlope(ref Velocity);
         }
@@ -162,6 +162,7 @@ public class CharacterController2D: RaycastController2D
     {
         float moveDistance = Mathf.Abs(velocity.x);
         float climbVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
+
         if (velocity.y <= climbVelocityY)
         {
             velocity.y = climbVelocityY;
@@ -185,11 +186,11 @@ public class CharacterController2D: RaycastController2D
         if (hit)
         {
             float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-            if (!slopeAngle.Equals(0f) && slopeAngle<=character.Attributes.MaxDescendAngle)
+            if (!slopeAngle.Equals(0f) && slopeAngle <= character.Attributes.MaxDescendAngle)
             {
                 if (Mathf.Sign(hit.normal.x).Equals(direciontX))
                 {
-                    if (hit.distance-skinWidth<=Mathf.Tan(slopeAngle*Mathf.Deg2Rad)*Mathf.Abs(velocity.x))
+                    if (hit.distance - skinWidth <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(velocity.x))
                     {
                         float moveDistance = Mathf.Abs(velocity.x);
                         float descendVelocityY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;

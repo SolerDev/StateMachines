@@ -1232,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748529331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.4, y: 3.8, z: 0}
+  m_LocalPosition: {x: -1.4, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 704150211}
@@ -1493,12 +1493,12 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.5
   m_Points:
-  - {x: -5, y: 17}
-  - {x: -5, y: -6.5}
-  - {x: 5, y: -6.5}
-  - {x: 5, y: 17}
+  - {x: -5.5, y: 17}
+  - {x: -5.5, y: -6.5}
+  - {x: 5.5, y: -6.5}
+  - {x: 5.5, y: 17}
 --- !u!4 &1281249626
 Transform:
   m_ObjectHideFlags: 0
@@ -1789,8 +1789,8 @@ EdgeCollider2D:
   - {x: -21.86376, y: 11.855992}
   - {x: -15.089406, y: 2.6417356}
   - {x: -4.625804, y: -4.4964795}
-  - {x: 3.4292731, y: -4.423501}
-  - {x: 3.4187114, y: -1.2060663}
+  - {x: 3.4, y: -4.423501}
+  - {x: 3.4, y: -1.2060663}
   - {x: 10.851507, y: -1.1938858}
   - {x: 10.819726, y: -0.20803274}
   - {x: 11.234566, y: -0.1605178}
@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e953064c146cd4e93f74559621d509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.1
+  smoothTime: 0.2
   offset: {x: 0, y: 1, z: -0.5}
 --- !u!20 &1687258584
 Camera:
@@ -2159,7 +2159,7 @@ Camera:
   far clip plane: 1
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

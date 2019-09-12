@@ -7,7 +7,7 @@ public class SWallGrab : SAir
     private Vector2 wallJumpDirection = Vector2.zero;
     private float timeInState = 0f;
 
-    private readonly int climbingHash = Animator.StringToHash("Climbing");
+    private readonly int grabingHash = Animator.StringToHash("Grabing");
     private readonly int jumpHash = Animator.StringToHash("Jump");
 
     //muito similar ao SWallSlide. Talvez devesse criar uma classe antes de ambos chama SWall
@@ -31,14 +31,14 @@ public class SWallGrab : SAir
         wallJumpDirection.y = character.Attributes.wallJumpProportions.y;
         wallJumpDirection.x *= -wallSide;
 
-        anim.SetBool(climbingHash, true);
+        anim.SetBool(grabingHash, true);
     }
 
     public override void OnExit()
     {
         base.OnExit();
 
-        anim.SetBool(climbingHash, false);
+        anim.SetBool(grabingHash, false);
     }
 
     public override Type FixedTick()

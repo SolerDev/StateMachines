@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SDash : SGround
@@ -9,9 +7,9 @@ public class SDash : SGround
 
     private float timeInState;
     private Vector2 dashVector;
-
-    LayerMask characterLayer;
-    LayerMask enemyLayer;
+    private float dashDirection;
+    private LayerMask characterLayer;
+    private LayerMask enemyLayer;
     private float dashDuration;
 
     public SDash(PlayerCharacter character) : base(character)
@@ -19,7 +17,7 @@ public class SDash : SGround
         dashVector = Vector2.right * character.Attributes.DashImpulse;
 
         characterLayer = Mathf.RoundToInt(Mathf.Log(StaticRefs.MASK_PLAYER, 2));
-        enemyLayer = Mathf.RoundToInt(Mathf.Log(StaticRefs.MASK_ENEMY, 2)); 
+        enemyLayer = Mathf.RoundToInt(Mathf.Log(StaticRefs.MASK_ENEMY, 2));
     }
 
     public override void OnEnter()
@@ -28,12 +26,13 @@ public class SDash : SGround
 
         anim.SetTrigger(dashHash);
         dashDuration = anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
-        Debug.Log(dashDuration);
+        //Debug.Log(dashDuration);
 
         timeInState = 0f;
 
         Physics2D.IgnoreLayerCollision(characterLayer, enemyLayer, true);
-        character.Controller.Velocity = dashVector * character.InputReader.DirX;
+        dashDirection = character.InputReader.DirX;
+        character.Controller.Velocity = dashVector * dashDirection;
     }
 
     public override void OnExit()
@@ -45,13 +44,22 @@ public class SDash : SGround
     public override Type FixedTick()
     {
         ft = base.FixedTick();
-        if (ft != null) { return ft; }
+        if (ft != null)
+        { return ft; }
 
 
         timeInState += Time.fixedDeltaTime;
-        
 
-        if (timeInState> dashDuration)
+
+        if (character.IsEdgeFromSide(dashDirection))
+        {
+            ft = typeof(SWallClimb);
+        }
+        else if (character.IsStepFromSide(dashDirection))
+        {
+            character.Step(dashDirection);
+        }
+        else if (timeInState > dashDuration)
         {
             ft = typeof(SIdle);
         }
