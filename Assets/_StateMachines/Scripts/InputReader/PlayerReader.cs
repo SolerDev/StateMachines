@@ -5,7 +5,7 @@ public class PlayerReader : InputReader
 {
     public bool Interact { get; protected set; }
     public bool Dash { get; protected set; }
-    
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -14,13 +14,14 @@ public class PlayerReader : InputReader
         Dash = false;
     }
 
-    #region Custom Methods
-
     protected override void ReadMovement()
     {
         base.ReadMovement();
 
-        if (Input.GetKeyDown(Controls.Instance.kJump)) Jump = true;
+        JumpPress = Input.GetKeyDown(Controls.Instance.kJump);
+        JumpRelease = Input.GetKeyUp(Controls.Instance.kJump);
+
+
         Dash = Input.GetKeyDown(Controls.Instance.kDash);
 
         DirX = Input.GetAxisRaw(Controls.Instance.kHorizontal);
@@ -36,13 +37,11 @@ public class PlayerReader : InputReader
         Attack = Input.GetKeyDown(Controls.Instance.kAttack);
         Interact = Input.GetKeyDown(Controls.Instance.kInteract);
     }
-    
+
     public override void ClearInput()
     {
         base.ClearInput();
         Interact = false;
         Dash = false;
     }
-
-    #endregion
 }

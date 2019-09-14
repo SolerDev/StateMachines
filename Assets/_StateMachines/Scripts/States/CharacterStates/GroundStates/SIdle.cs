@@ -17,11 +17,11 @@ public class SIdle : SGround
             return ft;
         }
         
-        if (!character.InputReader.DirX.Equals(0))
+        if (!character.Reader.DirX.Equals(0))
         {
             ft = typeof(SWalkPlayer);
         }
-        else if (character.InputReader.Jump && character.CanJump())
+        else if (character.Reader.JumpPress && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
         }

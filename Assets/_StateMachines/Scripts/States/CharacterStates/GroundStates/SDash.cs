@@ -31,7 +31,7 @@ public class SDash : SGround
         timeInState = 0f;
 
         Physics2D.IgnoreLayerCollision(characterLayer, enemyLayer, true);
-        dashDirection = character.InputReader.DirX;
+        dashDirection = character.Reader.DirX;
         character.Controller.Velocity = dashVector * dashDirection;
     }
 

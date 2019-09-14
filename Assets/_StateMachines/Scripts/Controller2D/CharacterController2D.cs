@@ -2,7 +2,7 @@
 
 public class CharacterController2D : RaycastController2D
 {
-    private Character character;
+    protected Character character;
 
     public CharacterController2D(Character character)
     {
@@ -68,6 +68,14 @@ public class CharacterController2D : RaycastController2D
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLenght, StaticRefs.MASK_PALPABLE);
             if (hit)
             {
+                if (hit.collider.CompareTag(StaticRefs.TAG_THROUGH))
+                {
+                    if (directionY.Equals(1f) || hit.distance.Equals(0f))
+                    {
+                        continue;
+                    }
+                }
+
                 velocity.y = (hit.distance - SkinWidth) * directionY;
                 rayLenght = hit.distance;
 

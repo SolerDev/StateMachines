@@ -17,7 +17,7 @@ public class SFloat : SWater
             return ft;
         }
 
-        Vector2 direction = character.InputReader.Direction;
+        Vector2 direction = character.Reader.Direction;
 
         if (!direction.Equals(Vector2.zero))
         {

@@ -39,8 +39,11 @@ public class BaseStats : ScriptableObject
 
     [Header("Jump")]
     [SerializeField]
-    private float jumpHeight = 2f;
-    public float JumpHeight { get => jumpHeight; private set => jumpHeight = value; }
+    private float maxJumpHeight = 2f;
+    public float MaxJumpHeight { get => maxJumpHeight; private set => maxJumpHeight = value; }
+    [SerializeField]
+    private float minJumpHeight = .5f;
+    public float MinJumpHeight { get => minJumpHeight; private set => minJumpHeight = value; }
     [SerializeField]
     private float timeToJumpApex = .3f;
     public float TimeToJumpApex { get => timeToJumpApex; private set => timeToJumpApex = value; }

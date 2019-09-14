@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Attributes
 {
+    #region Properties
+
     protected BaseStats baseStats;
     protected StateMachine stateMachine;
 
@@ -32,10 +34,12 @@ public class Attributes
     public float WaterAccelerationTime;
     public float WallSlideAccelerationTime;
 
-    public float JumpHeight;
+    public float MaxJumpHeight;
+    public float MinJumpHeight;
     public float TimeToJumpApex;
     public float Gravity;
-    public float JumpVelocity;
+    public float MaxJumpVelocity;
+    public float MinJumpVelocity;
 
     public int JumpAmmount;
     public int JumpsCount;
@@ -45,6 +49,8 @@ public class Attributes
 
     public float WallGrabTimeLimit;
     public Vector2 wallJumpProportions;
+
+    #endregion
 
     public Attributes(BaseStats baseStats, StateMachine stateMachine)
     {
@@ -76,10 +82,13 @@ public class Attributes
         WaterAccelerationTime = baseStats.WaterAccelerationTime;
         WallSlideAccelerationTime = baseStats.WallSlideAccelerationTime;
 
-        JumpHeight = baseStats.JumpHeight;
+        MaxJumpHeight = baseStats.MaxJumpHeight;
+        MinJumpHeight = baseStats.MinJumpHeight;
         TimeToJumpApex = baseStats.TimeToJumpApex;
-        Gravity = -(2 * JumpHeight) / Mathf.Pow(TimeToJumpApex, 2);
-        JumpVelocity = Math.Abs(Gravity) * TimeToJumpApex;
+        Gravity = -(2 * MaxJumpHeight) / Mathf.Pow(TimeToJumpApex, 2);
+        MaxJumpVelocity = Math.Abs(Gravity) * TimeToJumpApex;
+        MinJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Gravity) * MinJumpHeight);
+
 
         JumpAmmount = baseStats.JumpAmmount;
         JumpsCount = 0;

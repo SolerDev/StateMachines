@@ -51,7 +51,7 @@ public class SWalkPlayer : SGround
         {
             ft = typeof(SDash);
         }
-        else if (character.InputReader.Jump && character.CanJump())
+        else if (character.InputReader.JumpPress && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
         }

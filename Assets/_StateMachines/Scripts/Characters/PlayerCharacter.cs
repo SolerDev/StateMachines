@@ -3,7 +3,7 @@
     #region Properties
 
     public new PlayerAttributes Attributes { get => (PlayerAttributes)base.attributes; protected set => base.attributes = value; }
-    public new PlayerReader InputReader { get => (PlayerReader)base.inputReader; protected set => base.inputReader = value; }
+    public new PlayerReader InputReader { get => (PlayerReader)base.reader; protected set => base.reader = value; }
     public new PlayerBaseStats BaseStats { get => (PlayerBaseStats)base.baseStats; protected set => base.baseStats = value; }
 
     protected SSpawn spawnState;

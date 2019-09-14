@@ -11,17 +11,19 @@ public abstract class InputReader : ScriptableObject
     public float DirX { get; protected set; }
     public float DirY { get; protected set; }
     public Vector2 Direction;
-    public bool Jump { get; protected set; }
-    
+    public bool JumpPress { get; protected set; }
+    public bool JumpRelease { get; protected set; }
+
     #endregion
-    
+
     protected virtual void OnEnable()
     {
         #region Initialize
 
         Attack = false;
 
-        Jump = false;
+        JumpPress = false;
+        JumpRelease = false;
 
         DirX = 0f;
         DirY = 0f;
@@ -51,6 +53,6 @@ public abstract class InputReader : ScriptableObject
     public virtual void ClearInput()
     {
         Attack = false;
-        Jump = false;
+        JumpPress = false;
     }
 }

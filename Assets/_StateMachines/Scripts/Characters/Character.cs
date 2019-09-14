@@ -23,16 +23,16 @@ public abstract class Character : MonoBehaviour
     public Attributes Attributes { get => attributes; protected set => attributes = value; }
 
     [SerializeField]
-    protected InputReader inputReader;
-    public InputReader InputReader { get => inputReader; protected set => inputReader = value; }
+    protected InputReader reader;
+    public InputReader Reader { get => reader; protected set => reader = value; }
 
     public StateMachine StateMachine;
     protected Dictionary<Type, State> states;
-    
+
     protected SIdle idleState;
     protected SDie dieState;
     private SHurt hurtState;
-    
+
     #endregion
 
     protected virtual void Awake()
@@ -57,7 +57,7 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Update()
     {
-        InputReader.Read();
+        Reader.Read();
         StateMachine.StateTick();
     }
 
@@ -65,7 +65,7 @@ public abstract class Character : MonoBehaviour
     {
         StateMachine.StateFixedTick();
         Controller.Move();
-        inputReader.ClearInput();
+        reader.ClearInput();
     }
 
     protected virtual void InitializeStates()

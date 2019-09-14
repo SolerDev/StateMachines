@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public static class StaticRefs
 {
     public static readonly string TAG_GROUND = "Ground";
     public static readonly string TAG_WATER = "Water";
     public static readonly string TAG_PLATFORM = "Platform";
+    public static readonly string TAG_THROUGH = "Through";
 
     //MyLayerMask = 1 << LayerMask.NameToLayer("My Layer Name");
 

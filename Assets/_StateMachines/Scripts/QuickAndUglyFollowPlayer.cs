@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using SebController;
 using UnityEngine;
 
 public class QuickAndUglyFollowPlayer : MonoBehaviour
@@ -18,7 +17,11 @@ public class QuickAndUglyFollowPlayer : MonoBehaviour
     private void Awake()
     {
         Trans = transform;
-        targetTrans = FindObjectOfType<PlayerCharacter>().transform;
+        //targetTrans = FindObjectOfType<PlayerCharacter>().transform;
+        if (!targetTrans)
+        {
+            targetTrans = FindObjectOfType<SebPlayer>().transform;
+        }
     }
 
     private void Update()

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SRise : SAir
@@ -19,19 +17,21 @@ public class SRise : SAir
             return ft;
         }
 
-        Vector2 direction = character.InputReader.Direction;
+        Vector2 direction = character.Reader.Direction;
 
         if (character.Controller.Velocity.y < 0f)
         {
             ft = typeof(SFall);
         }
-        else if (character.InputReader.Jump && character.CanJump())
+        else if (character.Reader.JumpPress && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
         }
         else
         {
             character.Controller.Velocity.y += character.Attributes.Gravity;
+
+
             character.Glide(direction.x);
         }
 

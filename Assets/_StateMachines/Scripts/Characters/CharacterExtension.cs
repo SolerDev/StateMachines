@@ -135,8 +135,8 @@ public static class CharacterExtension
         //Debug.Log("jumpDirection: " + direction);
 
         Vector2 newVelocity = character.Controller.Velocity;
-        newVelocity.x += direction.x * character.Attributes.JumpVelocity;
-        newVelocity.y = direction.y * character.Attributes.JumpVelocity;
+        newVelocity.x += direction.x * character.Attributes.MaxJumpVelocity;
+        newVelocity.y = direction.y * character.Attributes.MaxJumpVelocity;
 
         character.Controller.Velocity = newVelocity;
         character.Attributes.JumpsCount++;
@@ -158,8 +158,8 @@ public static class CharacterExtension
 
         Vector2 newVelocity = character.Controller.Velocity;
 
-        newVelocity.x += inputDirection.x * character.Attributes.JumpVelocity;
-        newVelocity.y = inputDirection.y * character.Attributes.JumpVelocity;
+        newVelocity.x += inputDirection.x * character.Attributes.MaxJumpVelocity;
+        newVelocity.y = inputDirection.y * character.Attributes.MaxJumpVelocity;
 
         character.Controller.Velocity = newVelocity;
         character.Attributes.JumpsCount++;
