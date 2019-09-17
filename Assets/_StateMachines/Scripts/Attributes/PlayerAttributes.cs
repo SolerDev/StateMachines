@@ -1,21 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerAttributes : Attributes
+﻿public class PlayerAttributes : Attributes
 {
     public float DashImpulse;
-    protected new PlayerBaseStats baseStats { get => (PlayerBaseStats)base.baseStats; set => base.baseStats = value; }
+    protected new PlayerBaseStats stats { get => (PlayerBaseStats)base.stats; set => base.stats = value; }
 
-    public PlayerAttributes(PlayerBaseStats baseStats, StateMachine stateMachine) : base(baseStats, stateMachine)
+    public PlayerAttributes(PlayerBaseStats initialStats, StateMachine machine) : base(initialStats, machine)
     {
-        Initialize();
+        SetBaseStats(initialStats);
     }
 
-    public override void Initialize()
+    public override void SetBaseStats(BaseStats newStats)
     {
-        base.Initialize();
+        base.SetBaseStats(newStats);
 
-        DashImpulse = baseStats.DashImpulse;
+        DashImpulse = stats.DashImpulse;
     }
 }

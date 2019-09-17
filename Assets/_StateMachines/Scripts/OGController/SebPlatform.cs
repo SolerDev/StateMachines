@@ -21,9 +21,9 @@ namespace SebController
         private List<PassengerMovement> passengerMovement;
         private Dictionary<Transform, SebController> passengerDictionary = new Dictionary<Transform, SebController>();
 
-        public override void Start()
+        public void Start()
         {
-            base.Start();
+            //base.Start();
 
             globalWaypoints = new Vector3[localWaypoints.Length];
             for (int i = 0; i < localWaypoints.Length; i++)
@@ -99,7 +99,7 @@ namespace SebController
 
                 if (passenger.moveBeforePlatform == beforeMovePlatform)
                 {
-                    passengerDictionary[passenger.transform].Tick(passenger.velocity, passenger.standingOnPlatform);
+                    passengerDictionary[passenger.transform].Move(passenger.velocity, passenger.standingOnPlatform);
                 }
             }
         }
@@ -115,12 +115,12 @@ namespace SebController
             // Vertically moving platform
             if (velocity.y != 0)
             {
-                float rayLength = Mathf.Abs(velocity.y) + skinWidth;
+                float rayLength = Mathf.Abs(velocity.y) + SkinWidth;
 
-                for (int i = 0; i < verticalRayCount; i++)
+                for (int i = 0; i < verRayCount; i++)
                 {
-                    Vector2 rayOrigin = (directionY == -1) ? collBounds.bottomLeft : collBounds.topLeft;
-                    rayOrigin += Vector2.right * (verticalRaySpacing * i);
+                    Vector2 rayOrigin = (directionY == -1) ? Bounds.bottomLeft : Bounds.topLeft;
+                    rayOrigin += Vector2.right * (verRaySpacing * i);
                     RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, passengerMask);
 
                     if (hit && hit.distance != 0)
@@ -129,7 +129,7 @@ namespace SebController
                         {
                             movedPassengers.Add(hit.transform);
                             float pushX = (directionY == 1) ? velocity.x : 0;
-                            float pushY = velocity.y - (hit.distance - skinWidth) * directionY;
+                            float pushY = velocity.y - (hit.distance - SkinWidth) * directionY;
 
                             passengerMovement.Add(new PassengerMovement(hit.transform, new Vector3(pushX, pushY), directionY == 1, true));
                         }
@@ -140,12 +140,12 @@ namespace SebController
             // Horizontally moving platform
             if (velocity.x != 0)
             {
-                float rayLength = Mathf.Abs(velocity.x) + skinWidth;
+                float rayLength = Mathf.Abs(velocity.x) + SkinWidth;
 
-                for (int i = 0; i < horizontalRayCount; i++)
+                for (int i = 0; i < horRayCount; i++)
                 {
-                    Vector2 rayOrigin = (directionX == -1) ? collBounds.bottomLeft : collBounds.bottomRight;
-                    rayOrigin += Vector2.up * (horizontalRaySpacing * i);
+                    Vector2 rayOrigin = (directionX == -1) ? Bounds.bottomLeft : Bounds.bottomRight;
+                    rayOrigin += Vector2.up * (horRaySpacing * i);
                     RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, passengerMask);
 
                     if (hit && hit.distance != 0)
@@ -153,8 +153,8 @@ namespace SebController
                         if (!movedPassengers.Contains(hit.transform))
                         {
                             movedPassengers.Add(hit.transform);
-                            float pushX = velocity.x - (hit.distance - skinWidth) * directionX;
-                            float pushY = -skinWidth;
+                            float pushX = velocity.x - (hit.distance - SkinWidth) * directionX;
+                            float pushY = -SkinWidth;
 
                             passengerMovement.Add(new PassengerMovement(hit.transform, new Vector3(pushX, pushY), false, true));
                         }
@@ -165,11 +165,11 @@ namespace SebController
             // Passenger on top of a horizontally or downward moving platform
             if (directionY == -1 || velocity.y == 0 && velocity.x != 0)
             {
-                float rayLength = skinWidth * 2;
+                float rayLength = SkinWidth * 2;
 
-                for (int i = 0; i < verticalRayCount; i++)
+                for (int i = 0; i < verRayCount; i++)
                 {
-                    Vector2 rayOrigin = collBounds.topLeft + Vector2.right * (verticalRaySpacing * i);
+                    Vector2 rayOrigin = Bounds.topLeft + Vector2.right * (verRaySpacing * i);
                     RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, passengerMask);
 
                     if (hit && hit.distance != 0)

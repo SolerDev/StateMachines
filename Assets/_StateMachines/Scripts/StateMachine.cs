@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
-public class StateMachine
+public class StateMachine: MonoBehaviour
 {
     #region Properties
 
@@ -11,14 +12,14 @@ public class StateMachine
     
     #endregion
 
-    public void OnStart()
+    protected void Awake()
     {
         //enter first state
         CurrentState = AvailableStates.Values.First();
         SwitchToState(CurrentState.GetType());
     }
 
-    public void StateTick()
+    private void Update()
     {
         var nextState = CurrentState?.Tick();
 
@@ -29,7 +30,7 @@ public class StateMachine
         }
     }
 
-    public void StateFixedTick()
+    private void FixedUpdate()
     {
         var nextState = CurrentState?.FixedTick();
 

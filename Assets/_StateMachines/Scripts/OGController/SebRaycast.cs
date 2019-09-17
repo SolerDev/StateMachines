@@ -2,67 +2,70 @@
 
 namespace SebController
 {
-    [RequireComponent(typeof(BoxCollider2D))]
-    public class SebRaycast : MonoBehaviour
+    public abstract class SebRaycast : MonoBehaviour
     {
-        public LayerMask collisionMask;
+        //requires
+        public BoxCollider2D Collider;
+        protected LayerMask collisionMask;
 
-        public const float skinWidth = .015f;
+        public ColliderBounds Bounds;
+
+        public const float SkinWidth = .015f;
+
         private const float dstBetweenRays = .25f;
-        [HideInInspector]
-        public int horizontalRayCount;
-        [HideInInspector]
-        public int verticalRayCount;
 
-        [HideInInspector]
-        public float horizontalRaySpacing;
-        [HideInInspector]
-        public float verticalRaySpacing;
+        protected int horRayCount;
+        protected int verRayCount;
 
-        [HideInInspector]
-        public BoxCollider2D collider;
-        public ColliderBounds collBounds;
+        protected float horRaySpacing;
+        protected float verRaySpacing;
 
-        public virtual void Awake()
+        protected virtual void Awake()
         {
-            collider = GetComponent<BoxCollider2D>();
-        }
-
-        public virtual void Start()
-        {
+            //todo: update collider based on state
+            Collider = GetComponent<BoxCollider2D>();
+            collisionMask = StaticRefs.MASK_PALPABLE;
             CalculateRaySpacing();
         }
 
-        public void UpdateColliderBounds()
+        protected void UpdateColliderBounds()
         {
-            Bounds bounds = collider.bounds;
-            bounds.Expand(skinWidth * -2);
+            Bounds bounds = Collider.bounds;
+            bounds.Expand(SkinWidth * -2);
 
-            collBounds.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
-            collBounds.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
-            collBounds.topLeft = new Vector2(bounds.min.x, bounds.max.y);
-            collBounds.topRight = new Vector2(bounds.max.x, bounds.max.y);
+            Bounds.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
+            Bounds.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
+            Bounds.topLeft = new Vector2(bounds.min.x, bounds.max.y);
+            Bounds.topRight = new Vector2(bounds.max.x, bounds.max.y);
+            Bounds.middleLeft = new Vector2(bounds.min.x, bounds.center.y);
+            Bounds.middleRight = new Vector2(bounds.max.x, bounds.center.y);
+            Bounds.middleTop = new Vector2(bounds.center.x, bounds.max.y);
+            Bounds.middleBottom = new Vector2(bounds.center.x, bounds.max.y);
+            Bounds.middle = bounds.center;
         }
 
-        public void CalculateRaySpacing()
+        protected void CalculateRaySpacing()
         {
-            Bounds bounds = collider.bounds;
-            bounds.Expand(skinWidth * -2);
+            Bounds bounds = Collider.bounds;
+            bounds.Expand(SkinWidth * -2);
 
             float boundsWidth = bounds.size.x;
             float boundsHeight = bounds.size.y;
 
-            horizontalRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
-            verticalRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);
+            horRayCount = Mathf.RoundToInt(boundsHeight / dstBetweenRays);
+            verRayCount = Mathf.RoundToInt(boundsWidth / dstBetweenRays);
 
-            horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
-            verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
+            horRaySpacing = bounds.size.y / (horRayCount - 1);
+            verRaySpacing = bounds.size.x / (verRayCount - 1);
         }
 
         public struct ColliderBounds
         {
             public Vector2 topLeft, topRight;
             public Vector2 bottomLeft, bottomRight;
+            public Vector2 middleLeft, middleRight;
+            public Vector2 middleTop, middleBottom;
+            public Vector2 middle;
         }
     }
 }

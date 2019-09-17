@@ -1,15 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 namespace SebController
 {
     [RequireComponent(typeof(SebController))]
     public class SebPlayer : MonoBehaviour
     {
-        public float maxJumpHeight = 4;
-        public float minJumpHeight = 1;
-        public float timeToJumpApex = .4f;
-        private float accelerationTimeAirborne = .2f;
-        private float accelerationTimeGrounded = .1f;
-        private float moveSpeed = 6;
+        public InputReader reader;
+        protected Attributes attributes;
+        protected SebController controller;
+
+        protected StateMachine machine;
+        protected Dictionary<Type, State> states;
+        
+        protected Animator anim;
+
+        //public float attributes.MaxJumpHeight = 4;
+        //public float attributes.MinJumpHeight = 1;
+        //public float attributes.TimeToJumpApex = .4f;
+        //private float attributes.AirAccelerationTime = .2f;
+        //private float attributes.GroundAccelerationTime = .1f;
+        //private float Attributes.GroundSpeed = 6;
 
         public Vector2 wallJumpClimb;
         public Vector2 wallJumpOff;
@@ -23,26 +34,25 @@ namespace SebController
         private float minJumpVelocity;
         private Vector3 velocity;
         private float velocityXSmoothing;
-        private SebController controller;
         private Vector2 directionalInput;
         private bool wallSliding;
         private int wallDirX;
 
-        private void Start()
+        private void Awake()
         {
             controller = GetComponent<SebController>();
+            machine = new StateMachine();
+            machine.AvailableStates = states;
+            attributes = GetComponent<Attributes>();
 
-            gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
-            maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
-            minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
+            gravity = -(2 * attributes.MaxJumpHeight) / Mathf.Pow(attributes.TimeToJumpApex, 2);
+            maxJumpVelocity = Mathf.Abs(gravity) * attributes.TimeToJumpApex;
+            minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * attributes.MinJumpHeight);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            CalculateVelocity();
-            HandleWallSliding();
-
-            controller.Tick(velocity * Time.deltaTime, directionalInput);
+            controller.Move(velocity * Time.deltaTime, directionalInput);
 
             if (controller.collisions.above || controller.collisions.below)
             {
@@ -61,7 +71,7 @@ namespace SebController
         {
             directionalInput = input;
         }
-
+        
         public void OnJumpInputDown()
         {
             if (wallSliding)
@@ -141,13 +151,6 @@ namespace SebController
 
             }
 
-        }
-
-        private void CalculateVelocity()
-        {
-            float targetVelocityX = directionalInput.x * moveSpeed;
-            velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
-            velocity.y += gravity * Time.deltaTime;
         }
     }
 }

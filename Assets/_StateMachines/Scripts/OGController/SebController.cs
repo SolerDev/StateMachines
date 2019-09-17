@@ -1,52 +1,57 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace SebController
 {
     public class SebController : SebRaycast
     {
-        public float maxSlopeAngle = 80;
+        private Transform trans;
+        private Attributes attributes;
 
         public CollisionInfo collisions;
         [HideInInspector]
-        public Vector2 playerInput;
+        public Vector2 directionalInput;
 
-        public override void Start()
+        private WaitForSeconds resetPlatformWait = new WaitForSeconds(.5f);
+
+        protected override void Awake()
         {
-            base.Start();
+            base.Awake();
+            attributes = GetComponent<Attributes>();
+            trans = transform;
             collisions.faceDir = 1;
-
         }
 
-        public void Tick(Vector2 moveAmount, bool standingOnPlatform)
+        public void Move(Vector2 moveAmount, bool standingOnPlatform)
         {
-            Tick(moveAmount, Vector2.zero, standingOnPlatform);
+            Move(moveAmount, Vector2.zero, standingOnPlatform);
         }
 
-        public void Tick(Vector2 moveAmount, Vector2 input, bool standingOnPlatform = false)
+        public void Move(Vector2 moveAmount, Vector2 input, bool standingOnPlatform = false)
         {
             UpdateColliderBounds();
 
             collisions.Reset();
             collisions.moveAmountOld = moveAmount;
-            playerInput = input;
+            directionalInput = input;
 
             if (moveAmount.y < 0)
             {
                 DescendSlope(ref moveAmount);
             }
 
-            if (moveAmount.x != 0)
+            if (!moveAmount.x.Equals(0f))
             {
                 collisions.faceDir = (int)Mathf.Sign(moveAmount.x);
             }
 
             HorizontalCollisions(ref moveAmount);
-            if (moveAmount.y != 0)
+            if (!moveAmount.y.Equals(0f))
             {
                 VerticalCollisions(ref moveAmount);
             }
 
-            transform.Translate(moveAmount);
+            trans.Translate(moveAmount);
 
             if (standingOnPlatform)
             {
@@ -57,32 +62,31 @@ namespace SebController
         private void HorizontalCollisions(ref Vector2 moveAmount)
         {
             float directionX = collisions.faceDir;
-            float rayLength = Mathf.Abs(moveAmount.x) + skinWidth;
+            float rayLength = Mathf.Abs(moveAmount.x) + SkinWidth;
 
-            if (Mathf.Abs(moveAmount.x) < skinWidth)
+            if (Mathf.Abs(moveAmount.x) < SkinWidth)
             {
-                rayLength = 2 * skinWidth;
+                rayLength = 2 * SkinWidth;
             }
 
-            for (int i = 0; i < horizontalRayCount; i++)
+            for (int i = 0; i < horRayCount; i++)
             {
-                Vector2 rayOrigin = (directionX == -1) ? collBounds.bottomLeft : collBounds.bottomRight;
-                rayOrigin += Vector2.up * (horizontalRaySpacing * i);
+                Vector2 rayOrigin = (directionX.Equals(-1)) ? Bounds.bottomLeft : Bounds.bottomRight;
+                rayOrigin += Vector2.up * (horRaySpacing * i);
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
 
                 Debug.DrawRay(rayOrigin, Vector2.right * directionX, Color.red);
 
                 if (hit)
                 {
-
-                    if (hit.distance == 0)
+                    if (hit.distance.Equals(0f))
                     {
                         continue;
                     }
 
                     float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
-                    if (i == 0 && slopeAngle <= maxSlopeAngle)
+                    if (i.Equals(0f) && slopeAngle <= attributes.MaxClimbAngle)
                     {
                         if (collisions.descendingSlope)
                         {
@@ -90,18 +94,18 @@ namespace SebController
                             moveAmount = collisions.moveAmountOld;
                         }
                         float distanceToSlopeStart = 0;
-                        if (slopeAngle != collisions.slopeAngleOld)
+                        if (!slopeAngle.Equals(collisions.slopeAngleOld))
                         {
-                            distanceToSlopeStart = hit.distance - skinWidth;
+                            distanceToSlopeStart = hit.distance - SkinWidth;
                             moveAmount.x -= distanceToSlopeStart * directionX;
                         }
                         ClimbSlope(ref moveAmount, slopeAngle, hit.normal);
                         moveAmount.x += distanceToSlopeStart * directionX;
                     }
 
-                    if (!collisions.climbingSlope || slopeAngle > maxSlopeAngle)
+                    if (!collisions.climbingSlope || slopeAngle > attributes.MaxClimbAngle)
                     {
-                        moveAmount.x = (hit.distance - skinWidth) * directionX;
+                        moveAmount.x = (hit.distance - SkinWidth) * directionX;
                         rayLength = hit.distance;
 
                         if (collisions.climbingSlope)
@@ -109,8 +113,8 @@ namespace SebController
                             moveAmount.y = Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(moveAmount.x);
                         }
 
-                        collisions.left = directionX == -1;
-                        collisions.right = directionX == 1;
+                        collisions.left = directionX.Equals(-1f);
+                        collisions.right = directionX.Equals(1f);
                     }
                 }
             }
@@ -119,22 +123,22 @@ namespace SebController
         private void VerticalCollisions(ref Vector2 moveAmount)
         {
             float directionY = Mathf.Sign(moveAmount.y);
-            float rayLength = Mathf.Abs(moveAmount.y) + skinWidth;
+            float rayLength = Mathf.Abs(moveAmount.y) + SkinWidth;
 
-            for (int i = 0; i < verticalRayCount; i++)
+            for (int i = 0; i < verRayCount; i++)
             {
 
-                Vector2 rayOrigin = (directionY == -1) ? collBounds.bottomLeft : collBounds.topLeft;
-                rayOrigin += Vector2.right * (verticalRaySpacing * i + moveAmount.x);
+                Vector2 rayOrigin = directionY.Equals(-1f) ? Bounds.bottomLeft : Bounds.topLeft;
+                rayOrigin += Vector2.right * (verRaySpacing * i + moveAmount.x);
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
 
                 Debug.DrawRay(rayOrigin, Vector2.up * directionY, Color.red);
 
                 if (hit)
                 {
-                    if (hit.collider.tag == "Through")
+                    if (hit.collider.CompareTag(StaticRefs.TAG_THROUGH))
                     {
-                        if (directionY == 1 || hit.distance == 0)
+                        if (directionY.Equals(1f) || hit.distance.Equals(0f))
                         {
                             continue;
                         }
@@ -142,15 +146,15 @@ namespace SebController
                         {
                             continue;
                         }
-                        if (playerInput.y == -1)
+                        if (directionalInput.y.Equals(-1f))
                         {
                             collisions.fallingThroughPlatform = true;
-                            Invoke("ResetFallingThroughPlatform", .5f);
+                            StartCoroutine(ResetFallingThroughPlatform());
                             continue;
                         }
                     }
 
-                    moveAmount.y = (hit.distance - skinWidth) * directionY;
+                    moveAmount.y = (hit.distance - SkinWidth) * directionY;
                     rayLength = hit.distance;
 
                     if (collisions.climbingSlope)
@@ -166,22 +170,24 @@ namespace SebController
             if (collisions.climbingSlope)
             {
                 float directionX = Mathf.Sign(moveAmount.x);
-                rayLength = Mathf.Abs(moveAmount.x) + skinWidth;
-                Vector2 rayOrigin = ((directionX == -1) ? collBounds.bottomLeft : collBounds.bottomRight) + Vector2.up * moveAmount.y;
+                rayLength = Mathf.Abs(moveAmount.x) + SkinWidth;
+                Vector2 rayOrigin = ((directionX.Equals(-1f)) ? Bounds.bottomLeft : Bounds.bottomRight) + Vector2.up * moveAmount.y;
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, collisionMask);
 
                 if (hit)
                 {
                     float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-                    if (slopeAngle != collisions.slopeAngle)
+                    if (!slopeAngle.Equals(collisions.slopeAngle))
                     {
-                        moveAmount.x = (hit.distance - skinWidth) * directionX;
+                        moveAmount.x = (hit.distance - SkinWidth) * directionX;
                         collisions.slopeAngle = slopeAngle;
                         collisions.slopeNormal = hit.normal;
                     }
                 }
             }
         }
+
+        #region Controller Verbs
 
         private void ClimbSlope(ref Vector2 moveAmount, float slopeAngle, Vector2 slopeNormal)
         {
@@ -201,9 +207,8 @@ namespace SebController
 
         private void DescendSlope(ref Vector2 moveAmount)
         {
-
-            RaycastHit2D maxSlopeHitLeft = Physics2D.Raycast(collBounds.bottomLeft, Vector2.down, Mathf.Abs(moveAmount.y) + skinWidth, collisionMask);
-            RaycastHit2D maxSlopeHitRight = Physics2D.Raycast(collBounds.bottomRight, Vector2.down, Mathf.Abs(moveAmount.y) + skinWidth, collisionMask);
+            RaycastHit2D maxSlopeHitLeft = Physics2D.Raycast(Bounds.bottomLeft, Vector2.down, Mathf.Abs(moveAmount.y) + SkinWidth, collisionMask);
+            RaycastHit2D maxSlopeHitRight = Physics2D.Raycast(Bounds.bottomRight, Vector2.down, Mathf.Abs(moveAmount.y) + SkinWidth, collisionMask);
             if (maxSlopeHitLeft ^ maxSlopeHitRight)
             {
                 SlideDownMaxSlope(maxSlopeHitLeft, ref moveAmount);
@@ -213,17 +218,17 @@ namespace SebController
             if (!collisions.slidingDownMaxSlope)
             {
                 float directionX = Mathf.Sign(moveAmount.x);
-                Vector2 rayOrigin = (directionX == -1) ? collBounds.bottomRight : collBounds.bottomLeft;
+                Vector2 rayOrigin = (directionX.Equals(-1f)) ? Bounds.bottomRight : Bounds.bottomLeft;
                 RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
 
                 if (hit)
                 {
                     float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-                    if (slopeAngle != 0 && slopeAngle <= maxSlopeAngle)
+                    if (!slopeAngle.Equals(0f) && slopeAngle <= attributes.MaxClimbAngle)
                     {
-                        if (Mathf.Sign(hit.normal.x) == directionX)
+                        if (Mathf.Sign(hit.normal.x).Equals(directionX))
                         {
-                            if (hit.distance - skinWidth <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(moveAmount.x))
+                            if (hit.distance - SkinWidth <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(moveAmount.x))
                             {
                                 float moveDistance = Mathf.Abs(moveAmount.x);
                                 float descendmoveAmountY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
@@ -243,11 +248,10 @@ namespace SebController
 
         private void SlideDownMaxSlope(RaycastHit2D hit, ref Vector2 moveAmount)
         {
-
             if (hit)
             {
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-                if (slopeAngle > maxSlopeAngle)
+                if (slopeAngle > attributes.MaxClimbAngle)
                 {
                     moveAmount.x = Mathf.Sign(hit.normal.x) * (Mathf.Abs(moveAmount.y) - hit.distance) / Mathf.Tan(slopeAngle * Mathf.Deg2Rad);
 
@@ -259,10 +263,13 @@ namespace SebController
 
         }
 
-        private void ResetFallingThroughPlatform()
+        private IEnumerator ResetFallingThroughPlatform()
         {
+            yield return resetPlatformWait;
             collisions.fallingThroughPlatform = false;
         }
+
+        #endregion
 
         public struct CollisionInfo
         {
@@ -292,6 +299,5 @@ namespace SebController
                 slopeAngle = 0;
             }
         }
-
     }
 }

@@ -18,6 +18,7 @@ public class SWallSlide : SAir
     {
         base.OnEnter();
 
+        //get wall side
         wallSide = Physics2D.Raycast(
             character.Controller.CollBounds.middle,
             Vector2.left,

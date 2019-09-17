@@ -21,7 +21,8 @@ MonoBehaviour:
   airAccelerationTime: 0.3
   waterAccelerationTime: 0.2
   wallSlideAccelerationTime: 0.4
-  jumpHeight: 7
+  maxJumpHeight: 5
+  minJumpHeight: 0.5
   timeToJumpApex: 14
   jumpAmmount: 3
   maxClimbAngle: 65
