@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SebCharCtrl;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public abstract class Character : MonoBehaviour
     public Transform Trans { get; protected set; }
     public BoxCollider2D CurrentColl { get; protected set; }
     public Collider2D[] Colls { get; protected set; }
-    public CharacterController2D Controller { get; protected set; }
+    public SebController Controller { get; protected set; }
 
     [SerializeField]
     protected BaseStats baseStats;

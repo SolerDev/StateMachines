@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SebController
+namespace SebCharCtrl
 {
     public abstract class SebRaycast : MonoBehaviour
     {

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace SebController
+namespace SebCharCtrl
 {
     [RequireComponent(typeof(SebPlayer))]
     public class SebInput : MonoBehaviour

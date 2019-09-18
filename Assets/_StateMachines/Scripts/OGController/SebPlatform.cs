@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SebController
+namespace SebCharCtrl
 {
     public class SebPlatform : SebRaycast
     {

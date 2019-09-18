@@ -1,4 +1,4 @@
-﻿using SebController;
+﻿using SebCharCtrl;
 using UnityEngine;
 
 public class QuickAndUglyFollowPlayer : MonoBehaviour

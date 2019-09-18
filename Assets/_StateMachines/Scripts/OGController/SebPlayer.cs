@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-namespace SebController
+namespace SebCharCtrl
 {
     [RequireComponent(typeof(SebController))]
+    [RequireComponent(typeof(StateMachine))]
     public class SebPlayer : MonoBehaviour
     {
         public InputReader reader;
@@ -12,7 +13,7 @@ namespace SebController
 
         protected StateMachine machine;
         protected Dictionary<Type, State> states;
-        
+
         protected Animator anim;
 
         //public float attributes.MaxJumpHeight = 4;
@@ -41,7 +42,7 @@ namespace SebController
         private void Awake()
         {
             controller = GetComponent<SebController>();
-            machine = new StateMachine();
+            machine = GetComponent<StateMachine>();
             machine.AvailableStates = states;
             attributes = GetComponent<Attributes>();
 
@@ -71,7 +72,7 @@ namespace SebController
         {
             directionalInput = input;
         }
-        
+
         public void OnJumpInputDown()
         {
             if (wallSliding)

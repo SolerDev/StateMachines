@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace SebController
+namespace SebCharCtrl
 {
     public class SebController : SebRaycast
     {
@@ -9,10 +9,11 @@ namespace SebController
         private Attributes attributes;
 
         public CollisionInfo collisions;
-        [HideInInspector]
-        public Vector2 directionalInput;
+        public Vector2 Velocity;
+        //[HideInInspector]
+        //public Vector2 directionalInput;
 
-        private WaitForSeconds resetPlatformWait = new WaitForSeconds(.5f);
+        private readonly WaitForSeconds resetPlatformWait = new WaitForSeconds(.5f);
 
         protected override void Awake()
         {
@@ -20,6 +21,11 @@ namespace SebController
             attributes = GetComponent<Attributes>();
             trans = transform;
             collisions.faceDir = 1;
+        }
+
+        private void FixedUpdate()
+        {
+            Move(Velocity * Time.deltaTime);
         }
 
         public void Move(Vector2 moveAmount, bool standingOnPlatform)
@@ -33,7 +39,7 @@ namespace SebController
 
             collisions.Reset();
             collisions.moveAmountOld = moveAmount;
-            directionalInput = input;
+            //directionalInput = input;
 
             if (moveAmount.y < 0)
             {

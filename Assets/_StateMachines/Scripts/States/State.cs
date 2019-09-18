@@ -1,26 +1,34 @@
-﻿using System;
+﻿using SebCharCtrl;
+using System;
 using UnityEngine;
 
 public abstract class State
 {
     protected Character character;
+    protected SebController controller;
+    protected InputReader reader;
+    protected Attributes attributes;
+
     protected Transform trans;
     protected Animator anim;
-    protected BoxCollider2D coll;
+    protected BoxCollider2D defaultCollider;
     //protected Rigidbody2D rb;
 
-    protected Type t;   //"Update" r
-    protected Type ft;  //"FixedUpdate" r
+    protected Type t;   //"Update" return
+    protected Type ft;  //"FixedUpdate" return
 
-    private readonly int velXHash = Animator.StringToHash("VelX");
+    //private readonly int velXHash = Animator.StringToHash("VelX");
     //private readonly int velYHash = Animator.StringToHash("VelY");
 
     public State(Character character)
     {
         this.character = character;
+        this.controller = character.Controller;
+        this.reader = character.Reader;
+        this.attributes = character.Attributes;
         this.trans = character.Trans;
         this.anim = character.Anim;
-        this.coll = character.CurrentColl;
+        this.defaultCollider = character.CurrentColl;
         //this.rb = character.RB;
     }
 
@@ -45,7 +53,7 @@ public abstract class State
         ft = null;
 
         //anim.SetFloat(velYHash, character.Controller.Velocity.y);
-        anim.SetFloat(velXHash, character.Controller.Velocity.x);
+        //anim.SetFloat(velXHash, character.Controller.Velocity.x);
 
         return ft;
     }
