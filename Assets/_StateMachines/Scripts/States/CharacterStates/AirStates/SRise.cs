@@ -17,13 +17,13 @@ public class SRise : SAir
             return ft;
         }
 
-        Vector2 direction = character.Reader.Direction;
+        Vector2 direction = character.InputReader.Direction;
 
         if (character.Controller.Velocity.y < 0f)
         {
             ft = typeof(SFall);
         }
-        else if (character.Reader.JumpPress && character.CanJump())
+        else if (character.InputReader.JumpPress && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
         }

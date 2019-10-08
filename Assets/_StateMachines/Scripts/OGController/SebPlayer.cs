@@ -7,7 +7,7 @@ namespace SebCharCtrl
     [RequireComponent(typeof(StateMachine))]
     public class SebPlayer : MonoBehaviour
     {
-        public InputReader reader;
+        public InputReader Reader;
         protected Attributes attributes;
         protected SebController controller;
 
@@ -23,12 +23,12 @@ namespace SebCharCtrl
         //private float attributes.GroundAccelerationTime = .1f;
         //private float Attributes.GroundSpeed = 6;
 
-        public Vector2 wallJumpClimb;
-        public Vector2 wallJumpOff;
-        public Vector2 wallLeap;
+        public Vector2 WallJumpClimb;
+        public Vector2 WallJumpOff;
+        public Vector2 WallLeap;
 
-        public float wallSlideSpeedMax = 3;
-        public float wallStickTime = .25f;
+        public float WallSlideSpeedMax = 3;
+        public float WallStickTime = .25f;
         private float timeToWallUnstick;
         private float gravity;
         private float maxJumpVelocity;
@@ -53,19 +53,19 @@ namespace SebCharCtrl
 
         private void FixedUpdate()
         {
-            controller.Move(velocity * Time.deltaTime, directionalInput);
+            //controller.Move(velocity * Time.deltaTime, directionalInput);
 
-            if (controller.collisions.above || controller.collisions.below)
-            {
-                if (controller.collisions.slidingDownMaxSlope)
-                {
-                    velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
-                }
-                else
-                {
-                    velocity.y = 0;
-                }
-            }
+            //if (controller.collisions.above || controller.collisions.below)
+            //{
+            //    if (controller.collisions.slidingDownMaxSlope)
+            //    {
+            //        velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;
+            //    }
+            //    else
+            //    {
+            //        velocity.y = 0;
+            //    }
+            //}
         }
 
         public void SetDirectionalInput(Vector2 input)
@@ -79,28 +79,28 @@ namespace SebCharCtrl
             {
                 if (wallDirX == directionalInput.x)
                 {
-                    velocity.x = -wallDirX * wallJumpClimb.x;
-                    velocity.y = wallJumpClimb.y;
+                    velocity.x = -wallDirX * WallJumpClimb.x;
+                    velocity.y = WallJumpClimb.y;
                 }
                 else if (directionalInput.x == 0)
                 {
-                    velocity.x = -wallDirX * wallJumpOff.x;
-                    velocity.y = wallJumpOff.y;
+                    velocity.x = -wallDirX * WallJumpOff.x;
+                    velocity.y = WallJumpOff.y;
                 }
                 else
                 {
-                    velocity.x = -wallDirX * wallLeap.x;
-                    velocity.y = wallLeap.y;
+                    velocity.x = -wallDirX * WallLeap.x;
+                    velocity.y = WallLeap.y;
                 }
             }
-            if (controller.collisions.below)
+            if (controller.Collisions.below)
             {
-                if (controller.collisions.slidingDownMaxSlope)
+                if (controller.Collisions.slidingDownMaxSlope)
                 {
-                    if (directionalInput.x != -Mathf.Sign(controller.collisions.slopeNormal.x))
+                    if (directionalInput.x != -Mathf.Sign(controller.Collisions.slopeNormal.x))
                     { // not jumping against max slope
-                        velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y;
-                        velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
+                        velocity.y = maxJumpVelocity * controller.Collisions.slopeNormal.y;
+                        velocity.x = maxJumpVelocity * controller.Collisions.slopeNormal.x;
                     }
                 }
                 else
@@ -120,15 +120,15 @@ namespace SebCharCtrl
 
         private void HandleWallSliding()
         {
-            wallDirX = (controller.collisions.left) ? -1 : 1;
+            wallDirX = (controller.Collisions.left) ? -1 : 1;
             wallSliding = false;
-            if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0)
+            if ((controller.Collisions.left || controller.Collisions.right) && !controller.Collisions.below && velocity.y < 0)
             {
                 wallSliding = true;
 
-                if (velocity.y < -wallSlideSpeedMax)
+                if (velocity.y < -WallSlideSpeedMax)
                 {
-                    velocity.y = -wallSlideSpeedMax;
+                    velocity.y = -WallSlideSpeedMax;
                 }
 
                 if (timeToWallUnstick > 0)
@@ -142,12 +142,12 @@ namespace SebCharCtrl
                     }
                     else
                     {
-                        timeToWallUnstick = wallStickTime;
+                        timeToWallUnstick = WallStickTime;
                     }
                 }
                 else
                 {
-                    timeToWallUnstick = wallStickTime;
+                    timeToWallUnstick = WallStickTime;
                 }
 
             }

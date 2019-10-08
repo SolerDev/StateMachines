@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: NewPlayerStats
   m_EditorClassIdentifier: 
   healthMax: 10
-  groundSpeed: 0.3
-  airSpeed: 0.3
-  waterSpeed: 0.2
-  wallSlideSpeed: 0.4
+  groundSpeed: 12
+  airSpeed: 10
+  waterSpeed: 10
+  wallSlideSpeed: 5
   groundAccelerationTime: 0.1
   airAccelerationTime: 0.3
   waterAccelerationTime: 0.2
   wallSlideAccelerationTime: 0.4
-  maxJumpHeight: 5
-  minJumpHeight: 0.5
-  timeToJumpApex: 14
+  maxJumpHeight: 120
+  minJumpHeight: 30
+  timeToJumpApex: 10
   jumpAmmount: 3
   maxClimbAngle: 65
   maxDescendAngle: 75

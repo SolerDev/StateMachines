@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SSpawn : State
@@ -29,7 +27,7 @@ public class SSpawn : State
         }
 
         //rb.simulated = false;
-        character.Controller.Enabled = false;
+        character.Controller.enabled = false;
 
 
         timeInState = 0f;
@@ -45,17 +43,17 @@ public class SSpawn : State
         }
 
         //rb.simulated = true;
-        character.Controller.Enabled = true;
+        character.Controller.enabled = true;
 
     }
 
     public override Type Tick()
     {
-        t= base.Tick();
+        t = base.Tick();
 
-        timeInState +=Time.deltaTime;
+        timeInState += Time.deltaTime;
 
-        if (timeInState>timeInStateMax)
+        if (timeInState > timeInStateMax)
         {
             t = typeof(SIdle);
         }

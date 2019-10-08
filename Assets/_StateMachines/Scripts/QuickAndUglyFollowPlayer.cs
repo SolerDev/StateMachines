@@ -1,5 +1,4 @@
-﻿using SebCharCtrl;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class QuickAndUglyFollowPlayer : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class QuickAndUglyFollowPlayer : MonoBehaviour
         //targetTrans = FindObjectOfType<PlayerCharacter>().transform;
         if (!targetTrans)
         {
-            targetTrans = FindObjectOfType<SebPlayer>().transform;
+            targetTrans = FindObjectOfType<PlayerCharacter>().transform;
         }
     }
 

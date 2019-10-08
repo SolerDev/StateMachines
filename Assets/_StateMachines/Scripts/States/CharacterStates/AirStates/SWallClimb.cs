@@ -79,7 +79,7 @@ public class SWallClimb : State
             return ft;
         }
 
-        if (!character.Controller.Collisions.above && character.Reader.JumpPress)
+        if (!character.Controller.Collisions.above && character.InputReader.JumpPress)
         {
             character.Attributes.JumpsCount--;
             character.Jump(wallJumpDirection, jumpHash);

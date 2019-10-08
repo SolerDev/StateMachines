@@ -99,7 +99,7 @@ namespace SebCharCtrl
 
                 if (passenger.moveBeforePlatform == beforeMovePlatform)
                 {
-                    passengerDictionary[passenger.transform].Move(passenger.velocity, passenger.standingOnPlatform);
+                    //passengerDictionary[passenger.transform].Move(passenger.velocity, passenger.standingOnPlatform);
                 }
             }
         }
@@ -119,7 +119,7 @@ namespace SebCharCtrl
 
                 for (int i = 0; i < verRayCount; i++)
                 {
-                    Vector2 rayOrigin = (directionY == -1) ? Bounds.bottomLeft : Bounds.topLeft;
+                    Vector2 rayOrigin = (directionY == -1) ? CollBounds.bottomLeft : CollBounds.topLeft;
                     rayOrigin += Vector2.right * (verRaySpacing * i);
                     RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, passengerMask);
 
@@ -144,7 +144,7 @@ namespace SebCharCtrl
 
                 for (int i = 0; i < horRayCount; i++)
                 {
-                    Vector2 rayOrigin = (directionX == -1) ? Bounds.bottomLeft : Bounds.bottomRight;
+                    Vector2 rayOrigin = (directionX == -1) ? CollBounds.bottomLeft : CollBounds.bottomRight;
                     rayOrigin += Vector2.up * (horRaySpacing * i);
                     RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, passengerMask);
 
@@ -169,7 +169,7 @@ namespace SebCharCtrl
 
                 for (int i = 0; i < verRayCount; i++)
                 {
-                    Vector2 rayOrigin = Bounds.topLeft + Vector2.right * (verRaySpacing * i);
+                    Vector2 rayOrigin = CollBounds.topLeft + Vector2.right * (verRaySpacing * i);
                     RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, passengerMask);
 
                     if (hit && hit.distance != 0)
@@ -194,12 +194,12 @@ namespace SebCharCtrl
             public bool standingOnPlatform;
             public bool moveBeforePlatform;
 
-            public PassengerMovement(Transform _transform, Vector3 _velocity, bool _standingOnPlatform, bool _moveBeforePlatform)
+            public PassengerMovement(Transform transform, Vector3 velocity, bool standingOnPlatform, bool moveBeforePlatform)
             {
-                transform = _transform;
-                velocity = _velocity;
-                standingOnPlatform = _standingOnPlatform;
-                moveBeforePlatform = _moveBeforePlatform;
+                this.transform = transform;
+                this.velocity = velocity;
+                this.standingOnPlatform = standingOnPlatform;
+                this.moveBeforePlatform = moveBeforePlatform;
             }
         }
 
@@ -218,6 +218,5 @@ namespace SebCharCtrl
                 }
             }
         }
-
     }
 }

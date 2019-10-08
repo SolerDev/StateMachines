@@ -4,45 +4,13 @@ public static class CharacterExtension
 {
     #region Character Verbs
 
-    public static void Walk(this Character character, float direction)
-    {
-        Vector2 newVelocity = character.Controller.Velocity;
-        float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
-        float inputDirection = direction.Equals(0f) ? 0f : Mathf.Sign(direction);
-
-        if (character.IsEdgeFromSide(inputDirection))
-        {
-            //character.WallClimb(inputDirection);
-            //return;
-        }
-        else if (character.IsStepFromSide(inputDirection))
-        {
-            character.Step(inputDirection);
-            return;
-        }
-
-
-        newVelocity.x =
-            Mathf.SmoothDamp(
-            newVelocity.x,
-            character.Attributes.GroundSpeed * direction,
-            ref character.Attributes.GroundSpeedSmoothing,
-            character.Attributes.GroundAccelerationTime);
-
-        if (!character.Controller.Collisions.facingDirection.Equals(inputDirection))
-        {
-            //face the direction the character is trying to move
-            character.Face(inputDirection);
-        }
-
-        character.Controller.Velocity = newVelocity;
-    }
+    
 
     public static void Swim(this Character character, Vector2 direction)
     {
         Vector2 newVelocity = character.Controller.Velocity;
         float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
-        float inputDirection = direction.x.Equals(0f) ? 0f : Mathf.Sign(direction.x);
+        float inputDirection = direction.Equals(0f) ? 0 : (int)Mathf.Sign(direction.x);
 
         newVelocity = Vector2.SmoothDamp(
             newVelocity,
@@ -50,7 +18,7 @@ public static class CharacterExtension
             ref character.Attributes.WaterSpeedSmoothingVector,
             character.Attributes.WaterAccelerationTime);
 
-        if (!character.Controller.Collisions.facingDirection.Equals(inputDirection))
+        if (!character.Controller.Collisions.faceDir.Equals(inputDirection))
         {
             character.Face(inputDirection);
         }
@@ -59,8 +27,8 @@ public static class CharacterExtension
     public static void Glide(this Character character, float direction)
     {
         Vector2 newVelocity = character.Controller.Velocity;
-        float velocityDirection = newVelocity.x.Equals(0f) ? 0f : Mathf.Sign(newVelocity.x);
-        float inputDirection = direction.Equals(0f) ? 0f : Mathf.Sign(direction);
+        float velocityDirection = newVelocity.x.Equals(0f) ? 0 : (int)Mathf.Sign(newVelocity.x);
+        float inputDirection = direction.Equals(0f) ? 0 : (int)Mathf.Sign(direction);
 
         if (character.IsWalledFromSide(velocityDirection))
         {
@@ -79,7 +47,7 @@ public static class CharacterExtension
 
         character.Controller.Velocity = newVelocity;
 
-        if (!character.Controller.Collisions.facingDirection.Equals(inputDirection))
+        if (!character.Controller.Collisions.faceDir.Equals(inputDirection))
         {
             character.Face(inputDirection);
         }
@@ -91,10 +59,10 @@ public static class CharacterExtension
         { Debug.LogError("The character is trying to face an invalid direction"); }
 
 
-        if (!direction.Equals(0f))
+        if (!direction.Equals(0))
         {
-            character.Controller.Collisions.facingDirection = direction;
-            character.Trans.localScale = Vector2.up + Vector2.right * character.Controller.Collisions.facingDirection;
+            character.Controller.Collisions.faceDir = direction;
+            character.Trans.localScale = Vector2.up + Vector2.right * direction;
         }
     }
 

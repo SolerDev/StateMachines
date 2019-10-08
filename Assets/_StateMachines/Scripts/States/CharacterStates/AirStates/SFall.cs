@@ -17,9 +17,9 @@ public class SFall : SAir
             return ft;
         }
 
-        Vector2 direction = character.Reader.Direction;
+        Vector2 direction = character.InputReader.Direction;
 
-        if (character.Reader.JumpPress && character.CanJump())
+        if (character.InputReader.JumpPress && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
         }
@@ -33,7 +33,7 @@ public class SFall : SAir
             character.Controller.Velocity.y += character.Attributes.Gravity;
 
             //update jump velocity if the player releases the jumpKey
-            if (character.Reader.JumpRelease && character.Controller.Velocity.y > character.Attributes.MinJumpVelocity)
+            if (character.InputReader.JumpRelease && character.Controller.Velocity.y > character.Attributes.MinJumpVelocity)
             {
                 character.Controller.Velocity.y = character.Attributes.MinJumpVelocity;
             }

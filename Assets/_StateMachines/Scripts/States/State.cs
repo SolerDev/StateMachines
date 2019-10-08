@@ -6,7 +6,7 @@ public abstract class State
 {
     protected Character character;
     protected SebController controller;
-    protected InputReader reader;
+    protected InputReader inputReader;
     protected Attributes attributes;
 
     protected Transform trans;
@@ -24,7 +24,7 @@ public abstract class State
     {
         this.character = character;
         this.controller = character.Controller;
-        this.reader = character.Reader;
+        this.inputReader = character.InputReader;
         this.attributes = character.Attributes;
         this.trans = character.Trans;
         this.anim = character.Anim;
@@ -51,12 +51,6 @@ public abstract class State
     public virtual Type FixedTick()
     {
         ft = null;
-
-        //anim.SetFloat(velYHash, character.Controller.Velocity.y);
-        //anim.SetFloat(velXHash, character.Controller.Velocity.x);
-
         return ft;
     }
-
-
 }

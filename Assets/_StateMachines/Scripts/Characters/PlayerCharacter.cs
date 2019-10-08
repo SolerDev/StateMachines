@@ -1,10 +1,12 @@
-﻿public class PlayerCharacter : Character
+﻿using UnityEngine;
+
+public class PlayerCharacter : Character
 {
     #region Properties
 
-    public new PlayerAttributes Attributes { get => (PlayerAttributes)base.attributes; protected set => base.attributes = value; }
-    public new PlayerReader InputReader { get => (PlayerReader)base.reader; protected set => base.reader = value; }
+    [HideInInspector] public new PlayerAttributes Attributes { get => (PlayerAttributes)base.attributes; protected set => base.attributes = value; }
     public new PlayerBaseStats BaseStats { get => (PlayerBaseStats)base.baseStats; protected set => base.baseStats = value; }
+    public new PlayerReader InputReader { get => (PlayerReader)base.inputReader; protected set => base.inputReader = value; }
 
     protected SSpawn spawnState;
     private SWalkPlayer walkState;
@@ -30,8 +32,9 @@
 
         #region Initialize
 
-        Attributes = new PlayerAttributes(BaseStats, StateMachine);
-        InitializeStates();
+        Attributes = GetComponent<PlayerAttributes>();
+
+        //InitializeStates();
 
         #endregion
     }

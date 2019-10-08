@@ -1,34 +1,34 @@
-﻿using System;
+﻿using SebCharCtrl;
+using System;
 using UnityEngine;
 
 public class Attributes : MonoBehaviour
 {
     #region Properties
 
-    protected BaseStats stats;
-    protected StateMachine machine;
+    [SerializeField]
+    protected BaseStats baseStats;
+    protected StateMachine stateMachine;
 
     [Header("Combat")]
     public bool Alive;
     public bool Hurt;
     public bool Attacking;
 
-    [Space(10f)]
     [Header("Health")]
     public int HealthMax;
     public int HealthCurrent;
 
     [Space(10f)]
     [Header("Movement")]
-    [Header("Smoothing")]
-    public float GroundSpeedSmoothing;
-    public float AirSpeedSmoothing;
-    public float WaterSpeedSmoothing;
+    [HideInInspector] public float GroundSpeedSmoothing;
+    [HideInInspector] public float AirSpeedSmoothing;
+    [HideInInspector] public float WaterSpeedSmoothing;
     [HideInInspector] public Vector2 GroundSpeedSmoothingVector;
     [HideInInspector] public Vector2 AirSpeedSmoothingVector;
     [HideInInspector] public Vector2 WaterSpeedSmoothingVector;
 
-    [Header("Speed")]
+    [Header("Max Speed")]
     public float GroundSpeed;
     public float AirSpeed;
     public float WaterSpeed;
@@ -44,12 +44,12 @@ public class Attributes : MonoBehaviour
     public float MaxJumpHeight;
     public float MinJumpHeight;
     public float TimeToJumpApex;
-    public float Gravity;
+    [HideInInspector] public float Gravity;
     public float MaxJumpVelocity;
     public float MinJumpVelocity;
 
     public int JumpAmmount;
-    public int JumpsCount;
+    [HideInInspector] public int JumpsCount;
 
     [Header("Slopes")]
     public float MaxClimbAngle;
@@ -63,9 +63,9 @@ public class Attributes : MonoBehaviour
 
     protected void Awake()
     {
-        machine = GetComponent<StateMachine>();
+        stateMachine = GetComponent<StateMachine>();
 
-        SetBaseStats(stats);
+        SetBaseStats(baseStats);
     }
 
     public virtual void SetBaseStats(BaseStats newStats)
@@ -75,39 +75,39 @@ public class Attributes : MonoBehaviour
 
         Attacking = false;
 
-        stats = newStats;
+        baseStats = newStats;
 
-        HealthMax = stats.HealthMax;
+        HealthMax = baseStats.HealthMax;
         HealthCurrent = HealthMax;
 
         //FacingDirection = Vector2.one;
 
-        GroundSpeed = stats.GroundSpeed;
-        AirSpeed = stats.AirSpeed;
-        WaterSpeed = stats.WaterSpeed;
-        WallSlideSpeed = stats.WallSlideSpeed;
+        GroundSpeed = baseStats.GroundSpeed;
+        AirSpeed = baseStats.AirSpeed;
+        WaterSpeed = baseStats.WaterSpeed;
+        WallSlideSpeed = baseStats.WallSlideSpeed;
 
-        GroundAccelerationTime = stats.GroundAccelerationTime;
-        AirAccelerationTime = stats.AirAccelerationTime;
-        WaterAccelerationTime = stats.WaterAccelerationTime;
-        WallSlideAccelerationTime = stats.WallSlideAccelerationTime;
+        GroundAccelerationTime = baseStats.GroundAccelerationTime;
+        AirAccelerationTime = baseStats.AirAccelerationTime;
+        WaterAccelerationTime = baseStats.WaterAccelerationTime;
+        WallSlideAccelerationTime = baseStats.WallSlideAccelerationTime;
 
-        MaxJumpHeight = stats.MaxJumpHeight;
-        MinJumpHeight = stats.MinJumpHeight;
-        TimeToJumpApex = stats.TimeToJumpApex;
+        MaxJumpHeight = baseStats.MaxJumpHeight;
+        MinJumpHeight = baseStats.MinJumpHeight;
+        TimeToJumpApex = baseStats.TimeToJumpApex;
         Gravity = -(2 * MaxJumpHeight) / Mathf.Pow(TimeToJumpApex, 2);
         MaxJumpVelocity = Math.Abs(Gravity) * TimeToJumpApex;
         MinJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Gravity) * MinJumpHeight);
 
 
-        JumpAmmount = stats.JumpAmmount;
+        JumpAmmount = baseStats.JumpAmmount;
         JumpsCount = 0;
 
-        MaxClimbAngle = stats.MaxClimbAngle;
-        MaxDescendAngle = stats.MaxDescendAngle;
+        MaxClimbAngle = baseStats.MaxClimbAngle;
+        MaxDescendAngle = baseStats.MaxDescendAngle;
 
-        WallGrabTimeLimit = stats.WallGrabTimeLimit;
-        wallJumpProportions = stats.WalljumpProportions;
+        WallGrabTimeLimit = baseStats.WallGrabTimeLimit;
+        wallJumpProportions = baseStats.WalljumpProportions;
     }
 
     //passar para a character extensions
@@ -125,7 +125,7 @@ public class Attributes : MonoBehaviour
         }
 
         //Debug.Log(this + " remaining health is " + HealthCurrent + ".");
-        machine.SwitchToState(typeof(SHurt));
+        stateMachine.SwitchToState(typeof(SHurt));
     }
 
     public void Heal(int ammount)
@@ -149,6 +149,6 @@ public class Attributes : MonoBehaviour
         //Debug.Log(this + " died.");
 
         Alive = false;
-        machine.SwitchToState(typeof(SDie));
+        stateMachine.SwitchToState(typeof(SDie));
     }
 }

@@ -38,7 +38,7 @@ public class SWater : State
         {
             ft = typeof(SFall);
         }
-        else if (character.Reader.JumpPress && !character.IsWaterAbove())
+        else if (character.InputReader.JumpPress && !character.IsWaterAbove())
         {
             character.Jump(Vector2.up, jumpHash);
         }

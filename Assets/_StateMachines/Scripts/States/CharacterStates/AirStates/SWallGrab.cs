@@ -50,14 +50,14 @@ public class SWallGrab : SAir
         }
 
 
-        if (character.Reader.JumpPress && !character.Controller.Collisions.above)
+        if (character.InputReader.JumpPress && !character.Controller.Collisions.above)
         {
             character.Attributes.JumpsCount--;
             character.Jump(wallJumpDirection, jumpHash);
         }
         else if (
-            character.Reader.DirY < 0f ||
-            character.Reader.DirX * wallSide < 0f)
+            character.InputReader.DirY < 0f ||
+            character.InputReader.DirX * wallSide < 0f)
         {
             ft = typeof(SFall);
         }

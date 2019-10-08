@@ -8,9 +8,11 @@ namespace SebCharCtrl
         public BoxCollider2D Collider;
         protected LayerMask collisionMask;
 
-        public ColliderBounds Bounds;
+        public ColliderBounds CollBounds;
 
-        public const float SkinWidth = .015f;
+        [SerializeField]
+        private const float skinWidth = .015f;
+        public float SkinWidth { get { return skinWidth; } }
 
         private const float dstBetweenRays = .25f;
 
@@ -19,6 +21,7 @@ namespace SebCharCtrl
 
         protected float horRaySpacing;
         protected float verRaySpacing;
+
 
         protected virtual void Awake()
         {
@@ -33,15 +36,15 @@ namespace SebCharCtrl
             Bounds bounds = Collider.bounds;
             bounds.Expand(SkinWidth * -2);
 
-            Bounds.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
-            Bounds.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
-            Bounds.topLeft = new Vector2(bounds.min.x, bounds.max.y);
-            Bounds.topRight = new Vector2(bounds.max.x, bounds.max.y);
-            Bounds.middleLeft = new Vector2(bounds.min.x, bounds.center.y);
-            Bounds.middleRight = new Vector2(bounds.max.x, bounds.center.y);
-            Bounds.middleTop = new Vector2(bounds.center.x, bounds.max.y);
-            Bounds.middleBottom = new Vector2(bounds.center.x, bounds.max.y);
-            Bounds.middle = bounds.center;
+            CollBounds.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
+            CollBounds.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
+            CollBounds.topLeft = new Vector2(bounds.min.x, bounds.max.y);
+            CollBounds.topRight = new Vector2(bounds.max.x, bounds.max.y);
+            CollBounds.middleLeft = new Vector2(bounds.min.x, bounds.center.y);
+            CollBounds.middleRight = new Vector2(bounds.max.x, bounds.center.y);
+            CollBounds.middleTop = new Vector2(bounds.center.x, bounds.max.y);
+            CollBounds.middleBottom = new Vector2(bounds.center.x, bounds.max.y);
+            CollBounds.middle = bounds.center;
         }
 
         protected void CalculateRaySpacing()

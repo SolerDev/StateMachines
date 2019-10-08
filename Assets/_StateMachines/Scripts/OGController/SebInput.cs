@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace SebCharCtrl
 {
-    [RequireComponent(typeof(SebPlayer))]
+    //[RequireComponent(typeof(SebPlayer))]
     public class SebInput : MonoBehaviour
     {
         private SebPlayer player;

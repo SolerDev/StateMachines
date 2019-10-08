@@ -3,50 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class StateMachine: MonoBehaviour
+namespace SebCharCtrl
 {
-    #region Properties
-
-    public Dictionary<Type, State> AvailableStates;
-    public State CurrentState { get; private set; }
-    
-    #endregion
-
-    protected void Awake()
+    [RequireComponent(typeof(SebController))]
+    //[RequireComponent(typeof(SebPlayer))]
+    public class StateMachine : MonoBehaviour
     {
-        //enter first state
-        CurrentState = AvailableStates.Values.First();
-        SwitchToState(CurrentState.GetType());
-    }
+        #region Properties
 
-    private void Update()
-    {
-        var nextState = CurrentState?.Tick();
+        public Dictionary<Type, State> AvailableStates;
+        public State CurrentState { get; private set; }
 
-        if (nextState != null &&
-            nextState != CurrentState.GetType())
+        #endregion
+
+        protected void Start()
         {
-            SwitchToState(nextState);
+            //enter first state
+            CurrentState = AvailableStates.Values.First();
+            SwitchToState(CurrentState.GetType());
         }
-    }
 
-    private void FixedUpdate()
-    {
-        var nextState = CurrentState?.FixedTick();
-
-        if (nextState != null &&
-            nextState != CurrentState.GetType())
+        private void Update()
         {
-            SwitchToState(nextState);
+            var nextState = CurrentState?.Tick();
+
+            if (nextState != null &&
+                nextState != CurrentState.GetType())
+            {
+                SwitchToState(nextState);
+            }
         }
-    }
 
-    public void SwitchToState(Type nextState)
-    {
+        private void FixedUpdate()
+        {
+            var nextState = CurrentState?.FixedTick();
 
-        CurrentState.OnExit();
-        CurrentState = AvailableStates[nextState];
-        CurrentState.OnEnter();
+            if (nextState != null &&
+                nextState != CurrentState.GetType())
+            {
+                SwitchToState(nextState);
+            }
+        }
 
+        public void SwitchToState(Type nextState)
+        {
+
+            CurrentState.OnExit();
+            CurrentState = AvailableStates[nextState];
+            CurrentState.OnEnter();
+
+        }
     }
 }

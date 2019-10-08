@@ -9,13 +9,12 @@ public static class StaticRefs
 
     //MyLayerMask = 1 << LayerMask.NameToLayer("My Layer Name");
 
-    public static readonly LayerMask MASK_GROUND = 1 << LayerMask.NameToLayer("Ground");
+    public static readonly int MASK_GROUND = 1 << LayerMask.NameToLayer("Ground");
     public static readonly int MASK_WATER = 1 << LayerMask.NameToLayer("Water");
     public static readonly int MASK_PLATFORM = 1 << LayerMask.NameToLayer("Platform");
-    public static readonly LayerMask MASK_PLAYER = 1 << LayerMask.NameToLayer("Player");
-    public static readonly LayerMask MASK_ENEMY = 1 << LayerMask.NameToLayer("Enemy");
-
-    //int catLyrMask = (1 << someCat.layer)
+    public static readonly int MASK_PLAYER = 1 << LayerMask.NameToLayer("Player");
+    public static readonly int MASK_ENEMY = 1 << LayerMask.NameToLayer("Enemy");
+    public static readonly int MASK_THROUGH = 1 << LayerMask.NameToLayer("Through");
 
     [Tooltip("mask containing the GROUND and PLATFORM masks")]
     public static readonly int MASK_FLOOR = MASK_GROUND | MASK_PLATFORM;

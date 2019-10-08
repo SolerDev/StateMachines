@@ -16,23 +16,18 @@ public class SIdle : SGround
         {
             return ft;
         }
-        
-        if (!character.Reader.DirX.Equals(0))
+
+        if (!character.InputReader.DirX.Equals(0))
         {
             ft = typeof(SWalkPlayer);
         }
-        else if (character.Reader.JumpPress && character.CanJump())
+        else if (character.InputReader.JumpPress && character.CanJump())
         {
             character.Jump(Vector2.up, jumpHash);
         }
         else
         {
-
-            //if (character.Controller.Velocity.x.Equals(0f))
-            //{
-            //    character.Walk(Vector2.zero);
-            //}
-            character.Walk(0f);
+            controller.Velocity -= controller.Velocity;
         }
 
         return ft;

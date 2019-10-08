@@ -19,14 +19,15 @@ public abstract class Character : MonoBehaviour
     protected BaseStats baseStats;
     public BaseStats BaseStats { get => baseStats; protected set => baseStats = value; }
 
-    [SerializeField]
+    //[SerializeField]
     protected Attributes attributes;
     public Attributes Attributes { get => attributes; protected set => attributes = value; }
 
     [SerializeField]
-    protected InputReader reader;
-    public InputReader Reader { get => reader; protected set => reader = value; }
+    protected InputReader inputReader;
+    public InputReader InputReader { get => inputReader; protected set => inputReader = value; }
 
+    [HideInInspector]
     public StateMachine StateMachine;
     protected Dictionary<Type, State> states;
 
@@ -44,33 +45,26 @@ public abstract class Character : MonoBehaviour
         Anim = GetComponentInChildren<Animator>();
         //RB = GetComponent<Rigidbody2D>();
 
-        states = new Dictionary<Type, State>();
-        StateMachine = new StateMachine();
+        Attributes = GetComponent<Attributes>();
+        Controller = GetComponent<SebController>();
 
-        Attributes = new Attributes(BaseStats, StateMachine);
-        Controller = new CharacterController2D(this);
-    }
-
-    protected virtual void Start()
-    {
-        StateMachine.OnStart();
+        InitializeStates();
     }
 
     protected virtual void Update()
     {
-        Reader.Read();
-        StateMachine.StateTick();
+        inputReader.Read();
     }
 
     protected virtual void FixedUpdate()
     {
-        StateMachine.StateFixedTick();
-        Controller.Move();
-        reader.ClearInput();
+        inputReader.ClearInput();
     }
 
     protected virtual void InitializeStates()
     {
+        StateMachine = GetComponent<StateMachine>();
+        states = new Dictionary<Type, State>();
         StateMachine.AvailableStates = states;
 
         idleState = new SIdle(this);

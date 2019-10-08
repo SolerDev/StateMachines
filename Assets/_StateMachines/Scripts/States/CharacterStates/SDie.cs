@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SDie : State
@@ -21,7 +19,7 @@ public class SDie : State
         anim.SetTrigger(dieHash);
 
         //rb.simulated = false;
-        character.Controller.Enabled = false;
+        character.Controller.enabled = false;
 
         for (int i = 0; i < colls.Length; i++)
         {
@@ -34,7 +32,7 @@ public class SDie : State
         base.OnExit();
 
         //rb.simulated = true;
-        character.Controller.Enabled = true;
+        character.Controller.enabled = true;
 
         for (int i = 0; i < colls.Length; i++)
         {
@@ -50,7 +48,7 @@ public class SDie : State
         {
             t = typeof(SSpawn);
         }
-        
+
         return t;
     }
 }
